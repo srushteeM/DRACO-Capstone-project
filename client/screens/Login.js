@@ -14,7 +14,7 @@ export default class Login extends Component {
 
   constructor(props) {
     super(props);
-    state = {
+    this.state = {
       email   : '',
       password: '',
     }
@@ -33,7 +33,7 @@ export default class Login extends Component {
               placeholder="Email"
               keyboardType="email-address"
               underlineColorAndroid='transparent'
-              onChangeText={(email) => this.setState({email})}/>
+              onChangeText={(email) => this.setState({email:email})}/>
         </View>
         
         <View style={styles.inputContainer}>
@@ -42,7 +42,7 @@ export default class Login extends Component {
               placeholder="Password"
               secureTextEntry={true}
               underlineColorAndroid='transparent'
-              onChangeText={(password) => this.setState({password})}/>
+              onChangeText={(password) => this.setState({password:password})}/>
         </View>
 
         <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('login')}>
