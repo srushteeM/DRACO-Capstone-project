@@ -9,7 +9,7 @@ import {
   Image,
   Alert,
 } from "react-native";
-
+import AppLogo from "../components/AppLogo";
 export default class SignUp extends Component {
   constructor(props) {
     super(props);
@@ -28,19 +28,35 @@ export default class SignUp extends Component {
   render() {
     return (
       <View style={styles.container}>
+        {/* Logo of the app */}
+        <AppLogo />
+
+        {/* Image on the signup page */}
+        <Image source={{ uri: "#" }} />
         <View style={styles.inputContainer}>
+          <Image
+            style={styles.inputIcon}
+            source={{
+              uri: "https://png.icons8.com/message/ultraviolet/50/3498db",
+            }}
+          />
           <TextInput
             style={styles.inputs}
-            placeholder="Enter your name"
+            placeholder="Username"
             underlineColorAndroid="transparent"
             onChangeText={(name) => this.setState({ username: name })}
           />
         </View>
         <View style={styles.inputContainer}>
-          {/* <Image style={styles.inputIcon} source={{uri: 'https://png.icons8.com/message/ultraviolet/50/3498db'}}/> */}
+          <Image
+            style={styles.inputIcon}
+            source={{
+              uri: "https://png.icons8.com/message/ultraviolet/50/3498db",
+            }}
+          />
           <TextInput
             style={styles.inputs}
-            placeholder="Email"
+            placeholder="Email Address"
             keyboardType="email-address"
             underlineColorAndroid="transparent"
             onChangeText={(email) => this.setState({ email: email })}
@@ -48,7 +64,12 @@ export default class SignUp extends Component {
         </View>
 
         <View style={styles.inputContainer}>
-          {/* <Image style={styles.inputIcon} source={{uri: 'https://png.icons8.com/key-2/ultraviolet/50/3498db'}}/> */}
+          <Image
+            style={styles.inputIcon}
+            source={{
+              uri: "https://png.icons8.com/key-2/ultraviolet/50/3498db",
+            }}
+          />
           <TextInput
             style={styles.inputs}
             placeholder="Password"
@@ -58,6 +79,12 @@ export default class SignUp extends Component {
           />
         </View>
         <View style={styles.inputContainer}>
+          <Image
+            style={styles.inputIcon}
+            source={{
+              uri: "https://png.icons8.com/message/ultraviolet/50/3498db",
+            }}
+          />
           <TextInput
             style={styles.inputs}
             placeholder="Confirm Password"
@@ -74,13 +101,11 @@ export default class SignUp extends Component {
           <Text style={styles.loginText}>SignUp</Text>
         </TouchableHighlight>
 
-       
-
         <TouchableHighlight
           style={styles.buttonContainer}
           onPress={() => this.onClickListener("register")}
         >
-          <Text>Already have an account!</Text>
+          <Text>Already have an account? Login</Text>
         </TouchableHighlight>
       </View>
     );
