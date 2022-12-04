@@ -34,11 +34,12 @@ export default class ProfileScreen extends Component {
           <View style={styles.headerContent}>
             {/* Button to navigate to home screen */}
             <TouchableHighlight>
-            <Image
-                  style={styles.icon}
-                  source={{
-                    uri: "https://www.pngfind.com/pngs/m/73-734715_left-arrow-png-back-arrow-icon-android-transparent.png",
-                  }}/>
+              <Image
+                style={styles.icon}
+                source={{
+                  uri: "https://www.pngfind.com/pngs/m/73-734715_left-arrow-png-back-arrow-icon-android-transparent.png",
+                }}
+              />
             </TouchableHighlight>
             {/* Profile picture */}
             <View>

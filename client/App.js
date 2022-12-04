@@ -1,18 +1,22 @@
 import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import { createAppContainer, createSwitchNavigator } from "react-navigation";
+import TopTabNavigator from './navigation/TopTabNavigator';
 import Login from './screens/Login'
 import SignUp from './screens/SignUp'
-import ProfileScreen from './screens/ProfileScreen'
+
 
 export default class APP extends Component {
   render() {
     return (
-      <>
-        {/* <SignUp /> */}
-        <Login />
-        {/* <ProfileScreen /> */}
-      </>
+      <AppContainer/>
     )
   }
 }
 
+const switchNavigator = createSwitchNavigator({
+  Login: { screen: Login },
+  SignUp: { screen: SignUp },
+  TopTabNavigator: { screen: TopTabNavigator }
+});
+
+const AppContainer = createAppContainer(switchNavigator);
