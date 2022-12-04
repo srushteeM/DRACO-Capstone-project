@@ -9,8 +9,8 @@ export default class APP extends Component {
     return (
       <>
         {/* <SignUp /> */}
-        <Login />
-        {/* <ProfileScreen /> */}
+        {/* <Login /> */}
+        <ProfileScreen />
       </>
     )
   }
