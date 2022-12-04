@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { createAppContainer, createSwitchNavigator } from "react-navigation";
-import TopTabNavigator from './navigation/TopTabNavigator';
-import Login from './screens/Login'
-import SignUp from './screens/SignUp'
+import { createAppContainer } from "react-navigation";
+import SwitchNavigator from './navigation/SwitchNavigator'
+
 
 
 export default class APP extends Component {
@@ -13,10 +12,5 @@ export default class APP extends Component {
   }
 }
 
-const switchNavigator = createSwitchNavigator({
-  Login: { screen: Login },
-  SignUp: { screen: SignUp },
-  TopTabNavigator: { screen: TopTabNavigator }
-});
 
-const AppContainer = createAppContainer(switchNavigator);
+const AppContainer = createAppContainer(SwitchNavigator);

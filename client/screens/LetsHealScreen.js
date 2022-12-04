@@ -26,7 +26,7 @@ export default class LetsHealScreen extends Component {
   }
 
   clickEventListener(item) {
-    Alert.Alert(item.title)
+    console.log(item.title)
   }
 
   render() {
@@ -48,7 +48,7 @@ export default class LetsHealScreen extends Component {
           }}
           renderItem={({item}) => {
             return (
-              <TouchableOpacity style={styles.card} onPress={() => {this.clickEventListener(item.view)}}>
+              <TouchableOpacity style={styles.card} onPress={() => {this.clickEventListener(item)}}>
                 <View style={styles.cardFooter}></View>
                 <Image style={styles.cardImage} source={{uri:item.image}}/>
                 <View style={styles.cardHeader}>
