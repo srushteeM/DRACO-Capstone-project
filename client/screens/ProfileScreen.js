@@ -25,6 +25,7 @@ export default class ProfileScreen extends Component {
 
   render() {
     return (
+<<<<<<< HEAD
         <View style={styles.containerParent}>
           <View style={styles.containerChild}>
             <View style={styles.header}>
@@ -33,6 +34,36 @@ export default class ProfileScreen extends Component {
                 <Image style={styles.iconBack} source={require('../assets/back-arrow.png')}/>
                 </TouchableHighlight>
               <View style={styles.headerContent}>
+=======
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <View style={styles.headerContent}>
+            {/* Button to navigate to home screen */}
+            <TouchableHighlight>
+              <Image
+                style={styles.icon}
+                source={{
+                  uri: "https://www.pngfind.com/pngs/m/73-734715_left-arrow-png-back-arrow-icon-android-transparent.png",
+                }}
+              />
+            </TouchableHighlight>
+            {/* Profile picture */}
+            <View>
+              <Image
+                style={styles.avatar}
+                source={{
+                  uri: "https://bootdey.com/img/Content/avatar/avatar6.png",
+                }}
+              />
+              <TouchableHighlight>
+                <Image
+                  style={styles.icon}
+                  source={{
+                    uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwaZahYMhgJM47ENIg34mIKavn1ve1ivGCXGYK5YbdRWiCk65ReUVB_DeF8P07GBC4Dl4&usqp=CAU",
+                  }}
+                />
+              </TouchableHighlight>
+>>>>>>> master
 
                 {/* Profile picture */}
                 <View style={styles.userBox}>
