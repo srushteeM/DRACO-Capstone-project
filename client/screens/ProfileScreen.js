@@ -1,11 +1,6 @@
 import React, { Component } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableHighlight,
-} from "react-native";
+import { styles } from "./css/profileScreen";
+import { StyleSheet, Text, View, Image, TouchableHighlight, } from "react-native";
 
 export default class ProfileScreen extends Component {
   constructor(props) {
@@ -14,10 +9,11 @@ export default class ProfileScreen extends Component {
       profileImage: "",
       username: "",
       aboutMe: "",
-      phone: 0,
+      phone:" ",
       email: "",
     };
   }
+
   // Function to fetch user information from database
   fetchUserData = () => {};
   componentDidMount() {
@@ -58,131 +54,76 @@ export default class ProfileScreen extends Component {
                 />
               </TouchableHighlight>
 
-              <Text style={styles.name}>John Doe </Text>
+                {/* Profile picture */}
+                <View style={styles.userBox}>
+                  <Image style={styles.avatar} source={require('../assets/user.svg')} />
+                  <Text style={styles.name}>John Doe</Text>
+                    <TouchableHighlight>
+                      <Image style={styles.editProfile} source={require('../assets/pencil.svg')} />
+                    </TouchableHighlight>
+                </View>
+              </View>
             </View>
-          </View>
-        </View>
 
-        <View style={styles.body}>
-          {/* Name */}
-          <View style={styles.item}>
-            <View style={styles.iconContent}>
-              <Image style={styles.icon} source={{ uri: "#" }} />
-            </View>
-            <View style={styles.infoContent}>
-              <Text style={styles.info}>Name:{this.state.name}</Text>
-            </View>
-            <TouchableHighlight>
-              <Image
-                style={styles.icon}
-                source={{
-                  uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwaZahYMhgJM47ENIg34mIKavn1ve1ivGCXGYK5YbdRWiCk65ReUVB_DeF8P07GBC4Dl4&usqp=CAU",
-                }}
-              />
-            </TouchableHighlight>
-          </View>
-          {/* About */}
-          <View style={styles.item}>
-            <View style={styles.iconContent}>
-              <Image style={styles.icon} source={{ uri: "#" }} />
-            </View>
-            <View style={styles.infoContent}>
-              <Text style={styles.info}>About Me:{this.state.aboutMe}</Text>
-            </View>
-            <TouchableHighlight>
-              <Image
-                style={styles.icon}
-                source={{
-                  uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwaZahYMhgJM47ENIg34mIKavn1ve1ivGCXGYK5YbdRWiCk65ReUVB_DeF8P07GBC4Dl4&usqp=CAU",
-                }}
-              />
-            </TouchableHighlight>
-          </View>
-          {/* Phone number */}
-          <View style={styles.item}>
-            <View style={styles.iconContent}>
-              <Image style={styles.icon} source={{ uri: "#" }} />
-            </View>
-            <View style={styles.infoContent}>
-              <Text style={styles.info}>Phone:{this.state.phone}</Text>
-            </View>
-            <TouchableHighlight>
-              <Image
-                style={styles.icon}
-                source={{
-                  uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwaZahYMhgJM47ENIg34mIKavn1ve1ivGCXGYK5YbdRWiCk65ReUVB_DeF8P07GBC4Dl4&usqp=CAU",
-                }}
-              />
-            </TouchableHighlight>
-          </View>
-          {/* Email Address */}
-          <View style={styles.item}>
-            <View style={styles.iconContent}>
-              <Image style={styles.icon} source={{ uri: "#" }} />
-            </View>
-            <View style={styles.infoContent}>
-              <Text style={styles.info}>Email address:{this.state.email}</Text>
+            <View style={styles.body}>
+              {/* Name */}
+              <View style={styles.userNameBox}>
+                <View>
+                  <Image style={styles.iconUser} source={require('../assets/user-icon.svg')} />
+                </View>
+                <View>
+                  <Text style={styles.info}>Name{this.state.name}</Text>
+                </View>
+                <TouchableHighlight>
+                  <Image style={styles.nameEditIcon} source={require('../assets/pencil.svg')} />
+                </TouchableHighlight>
+              </View>
+            
+              {/* About */}
+              <View style={styles.userNameBox}>
+                <View>
+                  <Image style={styles.iconAbout} source={require('../assets/chat.svg')} />
+                </View>
+                <View>
+                  <Text style={styles.info}>About Me{this.state.aboutMe}</Text>
+                </View>
+                <TouchableHighlight>
+                  <Image style={styles.aboutEditIcon} source={require('../assets/pencil.svg')} />
+                </TouchableHighlight>
+              </View>
+
+              {/* Phone number */}
+              <View style={styles.PhoneBox}>
+                <View>
+                  <Image style={styles.iconPhone} source={require('../assets/phone.svg')}  />
+                </View>
+                <View>
+                  <Text style={styles.info}>Phone{this.state.phone}</Text>
+                </View>
+                <TouchableHighlight>
+                  <Image style={styles.iconPhoneEdit} source={require('../assets/pencil.svg')} />
+                </TouchableHighlight>
+              </View>
+
+              {/* Email Address */}
+              <View style={styles.emailBox}>
+                <View>
+                  <Image style={styles.iconEmail} source={require('../assets/mail.svg')}  />
+                </View>
+                <View>
+                  <Text style={styles.info}>Email address{this.state.email}</Text>
+                </View>
+                <TouchableHighlight>
+                  <Image style={styles.iconEmailEdit} source={require('../assets/pencil.svg')} />
+                </TouchableHighlight>
+              </View>
+              <View>
+                <Image style={styles.bottomWave} source={require('../assets/wave.png')} />
+              </View>
             </View>
           </View>
         </View>
-      </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  header: {
-    backgroundColor: "#DCDCDC",
-  },
-  headerContent: {
-    padding: 30,
-    alignItems: "center",
-  },
-  avatar: {
-    width: 130,
-    height: 130,
-    borderRadius: 63,
-    borderWidth: 4,
-    borderColor: "white",
-    marginBottom: 10,
-  },
-  name: {
-    fontSize: 22,
-    color: "#000000",
-    fontWeight: "600",
-  },
-  userInfo: {
-    fontSize: 16,
-    color: "#000000",
-    fontWeight: "600",
-  },
-  body: {
-    backgroundColor: "#ffffff",
-    height: 500,
-    alignItems: "center",
-  },
-  item: {
-    flexDirection: "row",
-  },
-  infoContent: {
-    flex: 1,
-    alignItems: "flex-start",
-    paddingLeft: 5,
-  },
-  iconContent: {
-    flex: 1,
-    alignItems: "flex-end",
-    paddingRight: 5,
-  },
-  icon: {
-    width: 30,
-    height: 30,
-    marginTop: 20,
-    marginLeft: 30,
-  },
-  info: {
-    fontSize: 18,
-    marginTop: 20,
-    color: "#000000",
-  },
-});

@@ -1,15 +1,5 @@
 import React, { Component } from "react";
-import "./css/signup.js";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Button,
-  TouchableHighlight,
-  Image,
-  Alert,
-} from "react-native";
+import {TouchableHighlight, Image,  Alert, View,} from "react-native";
 import { styles } from "./css/signup";
 import AppLogo from "../components/AppLogo";
 import { Images } from "../Images";
@@ -20,7 +10,6 @@ export default class SignUp extends Component {
     this.state = {
       username: "",
       email: "",
-      password: "",
       confirmPassword: "",
     };
   }
@@ -31,6 +20,7 @@ export default class SignUp extends Component {
 
   render() {
     return (
+      <View>
       <View style={styles.parentBox}>
         {/* Logo of the app */}
         <AppLogo />
@@ -59,7 +49,7 @@ export default class SignUp extends Component {
               style={styles.imgIcon}
             />
             <TextInput
-              placeholder="Username "
+              placeholder="Username"
               style={styles.inputField}
               underlineColorAndroid="transparent"
               onChangeText={(name) => this.setState({ username: name })}
@@ -130,6 +120,7 @@ export default class SignUp extends Component {
             style={styles.bottomImg}
           />
         </View>
+      </View>
       </View>
     );
   }

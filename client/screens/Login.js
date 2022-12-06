@@ -1,14 +1,5 @@
 import React, { Component } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Button,
-  TouchableHighlight,
-  Image,
-  Alert,
-} from "react-native";
+import { StyleSheet, Text, View, TextInput, Button, TouchableHighlight, Image, Alert } from "react-native";
 //import { Stack, TextInput, IconButton } from "@react-native-material/core";
 //import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import AppLogo from "../components/AppLogo";
