@@ -21,14 +21,15 @@ childBox:{
 
 welcomeText:{
     color:'#000',
-    background: '#eee9f2!important',
+    backgroundColor: '#eee9f2',
     textAlign: 'center',
     fontWeight: '500',
     width: 'fit-content',
     borderRadius: '25px',
-    padding: '5px 15px',
+    paddingTop: '5px',
+    paddingRight: '15px',
     position: 'relative',
-    margin: '35px 0 0',
+    marginTop: '35px',
     left:'50%',
     transform: 'translate(-50%, 0px)'
 },
@@ -97,7 +98,7 @@ imgCircle:{
     position:'absolute',
     left:'0',
     top:'0',
-    backGround:'no-repeat'
+    // backGround:'no-repeat'
 },  
 
 // logo img

@@ -25,16 +25,6 @@ export default class ProfileScreen extends Component {
 
   render() {
     return (
-<<<<<<< HEAD
-        <View style={styles.containerParent}>
-          <View style={styles.containerChild}>
-            <View style={styles.header}>
-                {/* Button to navigate to home screen */}
-                <TouchableHighlight>
-                <Image style={styles.iconBack} source={require('../assets/back-arrow.png')}/>
-                </TouchableHighlight>
-              <View style={styles.headerContent}>
-=======
       <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.headerContent}>
@@ -63,7 +53,6 @@ export default class ProfileScreen extends Component {
                   }}
                 />
               </TouchableHighlight>
->>>>>>> master
 
                 {/* Profile picture */}
                 <View style={styles.userBox}>
