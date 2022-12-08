@@ -121,7 +121,7 @@ imgShape:{
     position: 'absolute',
     right: '0',
     top: '15%',
-    opacity: '0.5;'
+    opacity: '0.5'
 }
 
 });
