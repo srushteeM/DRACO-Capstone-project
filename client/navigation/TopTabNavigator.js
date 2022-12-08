@@ -9,14 +9,14 @@ const Tab = createMaterialTopTabNavigator();
 
 function TopTabNavigator() {
   return (
-    <NavigationContainer>
+    //<NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen name="Stories" component={StoriesScreen} />
         <Tab.Screen name="LetsHeal" component={LetsHealScreen} />
         <Tab.Screen name="Companion" component={CompanionScreen} />
         <Tab.Screen name="My Profile" component={ProfileScreen} />
       </Tab.Navigator>
-    </NavigationContainer>
+   // </NavigationContainer>
   );
 }
 export default TopTabNavigator;
