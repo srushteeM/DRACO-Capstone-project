@@ -14,7 +14,7 @@ childBox:{
     maxWidth:'350px',
     position:'relative',
     left:'50%',
-    transform: 'translate(-50%, 25px)',
+    transform: 'translate(-50%, 0px)',
     padding:'0px',
     boxShadow: '0 1px 30px rgb(197 197 197 / 30%)'
 },
@@ -121,7 +121,7 @@ imgShape:{
     position: 'absolute',
     right: '0',
     top: '15%',
-    opacity: '0.5;'
+    opacity: '0.5'
 }
 
 });

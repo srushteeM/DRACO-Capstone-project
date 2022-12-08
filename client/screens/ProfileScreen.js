@@ -1,6 +1,16 @@
 import React, { Component } from "react";
 import { styles } from "./css/profileScreen";
+<<<<<<< HEAD
 import { StyleSheet, Text, View, Image, TouchableHighlight, } from "react-native";
+=======
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableHighlight,
+} from "react-native";
+>>>>>>> 4b0574e7c0eebd1f56af73d7b0c27bb1b0bb4f69
 
 export default class ProfileScreen extends Component {
   constructor(props) {
@@ -9,7 +19,11 @@ export default class ProfileScreen extends Component {
       profileImage: "",
       username: "",
       aboutMe: "",
+<<<<<<< HEAD
       phone:" ",
+=======
+      phone: " ",
+>>>>>>> 4b0574e7c0eebd1f56af73d7b0c27bb1b0bb4f69
       email: "",
     };
   }
@@ -28,32 +42,38 @@ export default class ProfileScreen extends Component {
       <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.headerContent}>
-            {/* Button to navigate to home screen */}
+            <Image
+              style={styles.avatar}
+              source={{
+                uri: "https://bootdey.com/img/Content/avatar/avatar6.png",
+              }}
+            />
             <TouchableHighlight>
               <Image
                 style={styles.icon}
                 source={{
-                  uri: "https://www.pngfind.com/pngs/m/73-734715_left-arrow-png-back-arrow-icon-android-transparent.png",
+                  uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwaZahYMhgJM47ENIg34mIKavn1ve1ivGCXGYK5YbdRWiCk65ReUVB_DeF8P07GBC4Dl4&usqp=CAU",
                 }}
               />
             </TouchableHighlight>
+
             {/* Profile picture */}
-            <View>
+            <View style={styles.userBox}>
               <Image
                 style={styles.avatar}
-                source={{
-                  uri: "https://bootdey.com/img/Content/avatar/avatar6.png",
-                }}
+                source={require("../assets/user.svg")}
               />
+              <Text style={styles.name}>John Doe</Text>
               <TouchableHighlight>
                 <Image
-                  style={styles.icon}
-                  source={{
-                    uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwaZahYMhgJM47ENIg34mIKavn1ve1ivGCXGYK5YbdRWiCk65ReUVB_DeF8P07GBC4Dl4&usqp=CAU",
-                  }}
+                  style={styles.editProfile}
+                  source={require("../assets/pencil.svg")}
                 />
               </TouchableHighlight>
+            </View>
+          </View>
 
+<<<<<<< HEAD
                 {/* Profile picture */}
                 <View style={styles.userBox}>
                   <Image style={styles.avatar} source={require('../assets/user.svg')} />
@@ -120,10 +140,86 @@ export default class ProfileScreen extends Component {
               <View>
                 <Image style={styles.bottomWave} source={require('../assets/wave.png')} />
               </View>
+=======
+          <View style={styles.body}>
+            {/* Name */}
+            <View style={styles.userNameBox}>
+              <View>
+                <Image
+                  style={styles.iconUser}
+                  source={require("../assets/user-icon.svg")}
+                />
+              </View>
+              <View>
+                <Text style={styles.info}>Name:{this.state.name}</Text>
+              </View>
+            </View>
+
+            {/* About */}
+            <View style={styles.userNameBox}>
+              <View>
+                <Image
+                  style={styles.iconAbout}
+                  source={require("../assets/chat.svg")}
+                />
+              </View>
+              <View>
+                <Text style={styles.info}>About Me:{this.state.aboutMe}</Text>
+              </View>
+              <TouchableHighlight>
+                <Image
+                  style={styles.aboutEditIcon}
+                  source={require("../assets/pencil.svg")}
+                />
+              </TouchableHighlight>
+            </View>
+
+            {/* Phone number */}
+            <View style={styles.PhoneBox}>
+              <View>
+                <Image
+                  style={styles.iconPhone}
+                  source={require("../assets/phone.svg")}
+                />
+              </View>
+              <View>
+                <Text style={styles.info}>Phone:{this.state.phone}</Text>
+              </View>
+              <TouchableHighlight>
+                <Image
+                  style={styles.iconPhoneEdit}
+                  source={require("../assets/pencil.svg")}
+                />
+              </TouchableHighlight>
+            </View>
+
+            {/* Email Address */}
+            <View style={styles.emailBox}>
+              <View>
+                <Image
+                  style={styles.iconEmail}
+                  source={require("../assets/mail.svg")}
+                />
+              </View>
+              <View>
+                <Text style={styles.info}>
+                  Email address:{this.state.email}
+                </Text>
+              </View>
+            </View>
+            <View>
+              <Image
+                style={styles.bottomWave}
+                source={require("../assets/wave.png")}
+              />
+>>>>>>> 4b0574e7c0eebd1f56af73d7b0c27bb1b0bb4f69
             </View>
           </View>
         </View>
     );
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4b0574e7c0eebd1f56af73d7b0c27bb1b0bb4f69
