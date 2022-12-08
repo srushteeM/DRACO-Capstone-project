@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {TouchableHighlight, Image,  Alert, View,} from "react-native";
+import {TouchableHighlight, Image,  Alert, View,TextInput,Text} from "react-native";
 import { styles } from "./css/signup";
 import AppLogo from "../components/AppLogo";
 import { Images } from "../Images";

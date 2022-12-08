@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text ,TextInput} from 'react-native';
 
 class StoriesScreen extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class StoriesScreen extends Component {
   render() {
     return (
       <View>
-        <Text> StoriesScreen </Text>
+       <TextInput placeholder="Create Post"/>
       </View>
     );
   }
