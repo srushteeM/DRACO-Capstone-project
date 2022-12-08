@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import { styles } from "./css/profileScreen";
-<<<<<<< HEAD
-import { StyleSheet, Text, View, Image, TouchableHighlight, } from "react-native";
-=======
 import {
   StyleSheet,
   Text,
@@ -10,7 +7,6 @@ import {
   Image,
   TouchableHighlight,
 } from "react-native";
->>>>>>> 4b0574e7c0eebd1f56af73d7b0c27bb1b0bb4f69
 
 export default class ProfileScreen extends Component {
   constructor(props) {
@@ -19,11 +15,7 @@ export default class ProfileScreen extends Component {
       profileImage: "",
       username: "",
       aboutMe: "",
-<<<<<<< HEAD
-      phone:" ",
-=======
       phone: " ",
->>>>>>> 4b0574e7c0eebd1f56af73d7b0c27bb1b0bb4f69
       email: "",
     };
   }
@@ -73,74 +65,6 @@ export default class ProfileScreen extends Component {
             </View>
           </View>
 
-<<<<<<< HEAD
-                {/* Profile picture */}
-                <View style={styles.userBox}>
-                  <Image style={styles.avatar} source={require('../assets/user.svg')} />
-                  <Text style={styles.name}>John Doe</Text>
-                    <TouchableHighlight>
-                      <Image style={styles.editProfile} source={require('../assets/pencil.svg')} />
-                    </TouchableHighlight>
-                </View>
-              </View>
-            </View>
-
-            <View style={styles.body}>
-              {/* Name */}
-              <View style={styles.userNameBox}>
-                <View>
-                  <Image style={styles.iconUser} source={require('../assets/user-icon.svg')} />
-                </View>
-                <View>
-                  <Text style={styles.info}>Name{this.state.name}</Text>
-                </View>
-                <TouchableHighlight>
-                  <Image style={styles.nameEditIcon} source={require('../assets/pencil.svg')} />
-                </TouchableHighlight>
-              </View>
-            
-              {/* About */}
-              <View style={styles.userNameBox}>
-                <View>
-                  <Image style={styles.iconAbout} source={require('../assets/chat.svg')} />
-                </View>
-                <View>
-                  <Text style={styles.info}>About Me{this.state.aboutMe}</Text>
-                </View>
-                <TouchableHighlight>
-                  <Image style={styles.aboutEditIcon} source={require('../assets/pencil.svg')} />
-                </TouchableHighlight>
-              </View>
-
-              {/* Phone number */}
-              <View style={styles.PhoneBox}>
-                <View>
-                  <Image style={styles.iconPhone} source={require('../assets/phone.svg')}  />
-                </View>
-                <View>
-                  <Text style={styles.info}>Phone{this.state.phone}</Text>
-                </View>
-                <TouchableHighlight>
-                  <Image style={styles.iconPhoneEdit} source={require('../assets/pencil.svg')} />
-                </TouchableHighlight>
-              </View>
-
-              {/* Email Address */}
-              <View style={styles.emailBox}>
-                <View>
-                  <Image style={styles.iconEmail} source={require('../assets/mail.svg')}  />
-                </View>
-                <View>
-                  <Text style={styles.info}>Email address{this.state.email}</Text>
-                </View>
-                <TouchableHighlight>
-                  <Image style={styles.iconEmailEdit} source={require('../assets/pencil.svg')} />
-                </TouchableHighlight>
-              </View>
-              <View>
-                <Image style={styles.bottomWave} source={require('../assets/wave.png')} />
-              </View>
-=======
           <View style={styles.body}>
             {/* Name */}
             <View style={styles.userNameBox}>
@@ -212,14 +136,10 @@ export default class ProfileScreen extends Component {
                 style={styles.bottomWave}
                 source={require("../assets/wave.png")}
               />
->>>>>>> 4b0574e7c0eebd1f56af73d7b0c27bb1b0bb4f69
             </View>
           </View>
         </View>
+      </View>
     );
   }
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 4b0574e7c0eebd1f56af73d7b0c27bb1b0bb4f69
