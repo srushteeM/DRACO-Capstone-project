@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
-import { createAppContainer } from "react-navigation";
+// import { createAppContainer } from "react-navigation";
 import SwitchNavigator from './navigation/SwitchNavigator'
+import { NavigationContainer } from '@react-navigation/native';
+
 
 export default class APP extends Component {
   render() {
     return (
-      <AppContainer/>
+      <NavigationContainer>
+      <SwitchNavigator/>
+    </NavigationContainer>
     )
   }
 }
 
 
-const AppContainer = createAppContainer(SwitchNavigator);
+// const AppContainer = createAppContainer(SwitchNavigator)
