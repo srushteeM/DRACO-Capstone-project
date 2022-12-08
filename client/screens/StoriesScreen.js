@@ -11,7 +11,7 @@ class StoriesScreen extends Component {
   render() {
     return (
       <View>
-       <TextInput placeholder="Create Post"/>
+       <TextInput placeholder="Create Post" />
       </View>
     );
   }
