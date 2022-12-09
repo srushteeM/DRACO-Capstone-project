@@ -11,7 +11,7 @@ parentBox: {
 childBox:{
     backgroundColor:'white',
     maxHeight:'auto',
-    maxWidth:'350px',
+    // maxWidth:'350px',
     position:'relative',
     left:'50%',
     transform: 'translate(-50%, 0px)',

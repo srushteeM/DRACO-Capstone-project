@@ -11,10 +11,10 @@ parentBox: {
 childBox:{
     backgroundColor:'white',
     maxHeight:'auto',
-    maxWidth:'350px',
+    // maxWidth:'350px',
     position:'relative',
     left:'50%',
-    transform: 'translate(-50%, 25px)',
+    transform: 'translate(-50%, 0px)',
     padding:'0px',
     boxShadow: '0 1px 30px rgb(197 197 197 / 30%)'
 },
@@ -28,8 +28,10 @@ welcomeText:{
     borderRadius: '25px',
     paddingTop: '5px',
     paddingRight: '15px',
+    paddingLeft: '15px',
+    paddingBottom: '5px',
     position: 'relative',
-    marginTop: '35px',
+    marginTop: '10px',
     left:'50%',
     transform: 'translate(-50%, 0px)'
 },
@@ -106,7 +108,7 @@ imgLogo:{
     height: '30px',
     width: '120px',
     left: '50%',
-    top:'10%',
+    top:'8%',
     zIndex:'9',
     transform: 'translate(-50%, -15px)'
 },
