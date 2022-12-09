@@ -26,7 +26,7 @@ class MeditationScreen extends Component {
       <View>
         <View>
           <Image
-            source={require("../assets/MeditationLogo.jpg")}
+            source={require("../assets/MeditationLogo.png")}
             style={{ width: "30%", height: "30%", topMargin: "30%" }}
           />
         </View>
