@@ -10,7 +10,7 @@ import {
 
 class TherapistScreen extends Component {
   openTherapistWebsite = () => {
-    Linking.openURL("https://www.nytimes.com/guides/well/beginner-yoga");
+    Linking.openURL("https://www.helpguide.org/articles/mental-health/finding-a-therapist-who-can-help-you-heal.htm#:~:text=Therapy%20can%20be%20an%20effective,that's%20weighing%20on%20your%20mind.");
   };
   openDialScreen = () => {
     let number = "";
@@ -26,22 +26,22 @@ class TherapistScreen extends Component {
       <View>
         <View>
           <Image
-            source={require("../assets/YogaLogo.png")}
+            source={require("../assets/TherapistLogo.png")}
             style={{ width: "30%", height: "30%", topMargin: "30%" }}
           />
         </View>
         <Text>
-        A set of specific exercises, called poses, combined with specific breathing techniques and meditation principles are the building blocks of a yoga class. If a pose causes pain or proves too difficult, there are variations and modifications that can be made to help students. Props like blocks, blankets and straps — even chairs — can be used to help you get the most benefit from the poses. Yoga is not one-size-fits-all: The best yoga workout for you will depend on your individual needs and goals.
+        Therapy can be an effective treatment for a host of mental and emotional problems. Simply talking about your thoughts and feelings with a supportive person can often make you feel better. It can be very healing, in and of itself, to voice your worries or talk about something that's weighing on your mind.
         </Text>
-        <TouchableHighlight onPress={() => this.openYogaWebsite()}>
+        <TouchableHighlight onPress={() => this.openTherapistWebsite()}>
           <Text>Know more...</Text>
         </TouchableHighlight>
         
         <Text>
-        A yoga teacher is a fitness and wellness professional who leads group classes in yoga. They teach students how to perform the various stretching poses, practice meditation and promote mindfulness in addition to overall wellbeing. These professionals are also often referred to as “yoga instructors” and “yogis.”
+        Therapists guide you to see how your feelings, thoughts, choices, and actions affect each other. Learn things. Therapists teach lessons about emotions, thoughts, coping skills, facing fears, and more. Parents and caregivers may learn ways to help you too.
         </Text>
         <TouchableHighlight onPress={() => this.openDialScreen()}>
-          <Text>Contact Yoga Instructor</Text>
+          <Text>Contact Therapist</Text>
         </TouchableHighlight>
       </View>
     );
