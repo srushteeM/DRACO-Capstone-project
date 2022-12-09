@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { Text, View, Image, TouchableHighlight, Linking,Platform } from "react-native";
+import {
+  Text,
+  View,
+  Image,
+  TouchableHighlight,
+  Linking,
+  Platform,
+} from "react-native";
 
 class ReikiScreen extends Component {
   openReikiWebsite = () => {
@@ -42,7 +49,11 @@ class ReikiScreen extends Component {
         <TouchableHighlight onPress={() => this.openReikiWebsite()}>
           <Text>Know more...</Text>
         </TouchableHighlight>
-        <Text>A reiki master is someone who has been attuned to the highest level of reiki. The attunement process opens up your body so that you're able to transmit healing energy, and lasts for your entire life.</Text>
+        <Text>
+          A reiki master is someone who has been attuned to the highest level of
+          reiki. The attunement process opens up your body so that you're able
+          to transmit healing energy, and lasts for your entire life.
+        </Text>
         <TouchableHighlight onPress={() => this.openDialScreen()}>
           <Text>Contact Reiki Master</Text>
         </TouchableHighlight>
