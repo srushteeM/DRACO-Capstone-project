@@ -9,10 +9,9 @@ export default class APP extends Component {
     return (
       <NavigationContainer>
       <SwitchNavigator/>
-    </NavigationContainer>
+      </NavigationContainer>
+
     )
   }
 }
 
-
-// const AppContainer = createAppContainer(SwitchNavigator)
