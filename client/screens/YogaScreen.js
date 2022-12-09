@@ -8,7 +8,7 @@ import {
   Platform,
 } from "react-native";
 
-class ReikiScreen extends Component {
+class YogaScreen extends Component {
   openYogaWebsite = () => {
     Linking.openURL("https://www.nytimes.com/guides/well/beginner-yoga");
   };
@@ -48,4 +48,4 @@ class ReikiScreen extends Component {
   }
 }
 
-export default ReikiScreen;
+export default YogaScreen;
