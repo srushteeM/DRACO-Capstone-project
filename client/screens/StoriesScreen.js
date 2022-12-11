@@ -1,22 +1,7 @@
-<<<<<<< HEAD
 import React, { Component } from 'react';
 
-import { View, Text,TextInput } from 'react-native';
+import { View, Text,TextInput,Image ,StyleSheet,ActivityIndicator,TouchableHighlight,FlatList} from 'react-native';
 
-=======
-import React, { Component } from "react";
-
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableHighlight,
-  ActivityIndicator,
-  FlatList,
-  Image,
-  StyleSheet
-} from "react-native";
->>>>>>> 7a22d31bae7561dfc9c241990f559edebbd59697
 
 class StoriesScreen extends Component {
   constructor(props) {
@@ -62,25 +47,8 @@ class StoriesScreen extends Component {
     </View>
   );
   render() {
-<<<<<<< HEAD
-    return (
-      <View>
-<<<<<<< HEAD
 
-          <TextInput placeholder="Create Post"/>
-
-=======
-<<<<<<< HEAD
-       <TextInput placeholder="Create Post" />
-=======
-
-          <TextInput placeholder="Create Post"/>
-
->>>>>>> e33ac57bf1e60787b9172a0c38132dfa55f9695e
->>>>>>> 7a22d31bae7561dfc9c241990f559edebbd59697
-      </View>
-    );
-=======
+    
     if (this.state.data != null) {
       return (
         <View>
@@ -112,7 +80,7 @@ class StoriesScreen extends Component {
         </View>
       );
     }
->>>>>>> fbde395397cf6459d7c292fa329ecba43a4bfba2
+
   }
 }
 const styles = StyleSheet.create({
