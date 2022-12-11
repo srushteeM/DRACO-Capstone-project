@@ -14,15 +14,9 @@ childBox:{
     // maxWidth:'350px',
     position:'relative',
     left:'50%',
-<<<<<<< HEAD
     transform: 'translate(-50%, 0%)',
     padding:'0',
     // boxShadow: '0 1px 30px rgb(197 197 197 / 30%)'
-=======
-    transform: 'translate(-50%, 0px)',
-    padding:'0px',
-    boxShadow: '0 1px 30px rgb(197 197 197 / 30%)'
->>>>>>> 7a22d31bae7561dfc9c241990f559edebbd59697
 },
 
 welcomeText:{
@@ -34,11 +28,7 @@ welcomeText:{
     borderRadius: '25px',
     paddingTop: '5px',
     paddingRight: '15px',
-<<<<<<< HEAD
     paddingLeft:'15px',
-=======
-    paddingLeft: '15px',
->>>>>>> 7a22d31bae7561dfc9c241990f559edebbd59697
     paddingBottom: '5px',
     position: 'relative',
     marginTop: '10px',
