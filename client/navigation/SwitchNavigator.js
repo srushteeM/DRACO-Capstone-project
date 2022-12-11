@@ -1,29 +1,61 @@
 // import {createSwitchNavigator } from "react-navigation";
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import TopTabNavigator from './TopTabNavigator';
-import Login from '../screens/Login';
-import SignUp from '../screens/SignUp';
-import ReikiScreen from '../screens/ReikiScreen';
-import YogaScreen from '../screens/YogaScreen';
-import MeditationScreen from '../screens/MeditationScreen';
-import TherapistScreen from '../screens/TherapistScreen';
-import CreatePost from '../screens/CreatePost';
+import TopTabNavigator from "./TopTabNavigator";
+import Login from "../screens/Login";
+import SignUp from "../screens/SignUp";
+import ReikiScreen from "../screens/ReikiScreen";
+import YogaScreen from "../screens/YogaScreen";
+import MeditationScreen from "../screens/MeditationScreen";
+import TherapistScreen from "../screens/TherapistScreen";
+import CreatePost from "../screens/CreatePost";
 const Stack = createNativeStackNavigator();
 
 function SwitchNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="SignUp" component={SignUp} />
-      <Stack.Screen name="TopTabNavigator" component={TopTabNavigator} />
-      <Stack.Screen name="ReikiScreen" component={ReikiScreen} />
-      <Stack.Screen name="YogaScreen" component={YogaScreen} />
-      <Stack.Screen name="MeditationScreen" component={MeditationScreen} />
-      <Stack.Screen name="TherapistScreen" component={TherapistScreen} />
-      <Stack.Screen name="CreatePost" component={CreatePost} />
+      <Stack.Screen
+        name="Login"
+        component={Login}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="SignUp"
+        component={SignUp}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Home"
+        component={TopTabNavigator}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Reiki"
+        component={ReikiScreen}
+        options={{ headerTitleAlign: "center" }}
+      />
+      <Stack.Screen
+        name="Yoga"
+        component={YogaScreen}
+        options={{ headerTitleAlign: "center" }}
+      />
+      <Stack.Screen
+        name="Meditation"
+        component={MeditationScreen}
+        options={{ headerTitleAlign: "center" }}
+      />
+      <Stack.Screen
+        name="Therapist"
+        component={TherapistScreen}
+        options={{ headerTitleAlign: "center" }}
+      />
+      <Stack.Screen
+        name="Create Post"
+        component={CreatePost}
+        options={{ headerTitleAlign: "center" }}
+      />
     </Stack.Navigator>
   );
 }
 
-export default SwitchNavigator
+export default SwitchNavigator;

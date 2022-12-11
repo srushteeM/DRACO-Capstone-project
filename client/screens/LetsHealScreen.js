@@ -20,25 +20,25 @@ export default class LetsHealScreen extends Component {
           id: 1,
           title: "REIKI",
           image: "https://cdn-icons-png.flaticon.com/512/3696/3696322.png",
-          screen:"ReikiScreen"
+          screen:"Reiki"
         },
         {
           id: 2,
           title: "YOGA",
           image: "https://cdn-icons-png.flaticon.com/512/2043/2043787.png",
-          screen:"YogaScreen"
+          screen:"Yoga"
         },
         {
           id: 3,
           title: "MEDITATION",
           image: "https://cdn-icons-png.flaticon.com/512/384/384156.png",
-          screen:"MeditationScreen"
+          screen:"Meditation"
         },
         {
           id: 4,
           title: "THERAPIST",
           image: "https://cdn-icons-png.flaticon.com/512/1971/1971437.png",
-          screen:"TherapistScreen"
+          screen:"Therapist"
         },
       ],
     };
