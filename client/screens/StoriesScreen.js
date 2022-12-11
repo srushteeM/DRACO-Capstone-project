@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+import React, { Component } from 'react';
+
+import { View, Text,TextInput } from 'react-native';
+
+=======
 import React, { Component } from "react";
 
 import {
@@ -10,6 +16,7 @@ import {
   Image,
   StyleSheet
 } from "react-native";
+>>>>>>> 7a22d31bae7561dfc9c241990f559edebbd59697
 
 class StoriesScreen extends Component {
   constructor(props) {
@@ -59,12 +66,18 @@ class StoriesScreen extends Component {
     return (
       <View>
 <<<<<<< HEAD
+
+          <TextInput placeholder="Create Post"/>
+
+=======
+<<<<<<< HEAD
        <TextInput placeholder="Create Post" />
 =======
 
           <TextInput placeholder="Create Post"/>
 
 >>>>>>> e33ac57bf1e60787b9172a0c38132dfa55f9695e
+>>>>>>> 7a22d31bae7561dfc9c241990f559edebbd59697
       </View>
     );
 =======

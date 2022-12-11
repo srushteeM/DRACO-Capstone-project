@@ -1,44 +1,26 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  
-containerParent:{
+
+container:{
   width:'100%',
-  height:'100vh',
-  // backgroundColor:'lightgrey'
+  height:'100%',
+  backgroundColor:'#fff'
 },
-
-containerChild:{
-  maxWidth:'350px',
-  height:'auto',
-  position:'relative',
-  backgroundColor:'#fff',
-  overflow:'hidden',
-  left:'50%',
-  transform:'translate(-50%, 5%)',
-  boxShadow: '0 1px 30px #b3b0b04d'
-},
-
+  
 header: {
   position:'relative',
   backgroundColor: "#8530d1",
-  minHeight:150,
+  minHeight:120,
   borderBottomLeftRadius:50,
   borderBottomRightRadius:50
 },
 
-iconBack: {
-  width: 30,
-  height: 30,
-  marginTop: 20,
-  marginLeft: 30,
-},
-
 userBox:{
- position:'absolute',
- paddingBottom:'50px',
- height:'100px',
- width:'90%'
+  position:'absolute',
+  paddingBottom:'50px',
+  height:'100px',
+  width:'90%',
 },
 
 avatar: {
@@ -49,168 +31,148 @@ avatar: {
   borderColor: "lavender",
   backgroundColor:'#fff',
   position:'absolute',
-  marginTop:'15%',
+  marginTop:'20%',
   left:'10%',
 },
+
 
 name: {
   position:'absolute',
   textAlign:'center',
-  bottom:'-25px',
+  bottom:'-45px',
   left:'35%',
   fontSize: 16,
   color: "#000000",
   fontWeight: "600",
 },
 
+
 editProfile:{
   position:'absolute',
   width: 18,
   height: 18,
-  marginTop:105,
+  marginTop:'34%',
   right:0,
   zIndex:999
 },
-
 
 body: {
   position:'relative',
   backgroundColor: "#fff",
   height:'100%',
-  top:60,
+  top:'12%',
   alignItems: "left",
   borderTopLeftRadius:50,
   borderTopRightRadius:50,
   boxShadow: 'rgb(221 221 221) 0 -10px 35px inset;'
 },
 
+// UserBox
+
 userNameBox:{
   position:'relative',
-  display:'flex',
   flexDirection:'row',
-  flexWrap:'wrap',
-  justifyContent:'space-evenly',
-  padding:25,
+  padding:'8%',
 },
 
 iconUser:{
   width:'25px',
   height:'25px',
-  marginLeft: '-60px'
+  marginLeft: '0'
 },
 
 info:{
   position:'relative',
-  marginLeft:-100,
-  marginVertical:5,
+  paddingTop:0,
+  paddingLeft:10,
   fontWeight:700,
-  fontSize:'1rem'
+  fontSize:'100%'
 },
 
-nameEditIcon:{
-  width:'18px',
-  height:'18px',
-  top: '5px',
-  right: '-55px',
-  position: 'absolute',
-},
+// // About Section
 
-// About Section
-
-userNameBox:{
+aboutBox:{
   position:'relative',
-  display:'flex',
   flexDirection:'row',
-  flexWrap:'wrap',
-  justifyContent:'space-evenly',
-  padding:25,
-  borderBottomWidth:'1px',
-  borderBottomColor:'#e9e9e9',
-  marginLeft: '8px',
-  marginRight:'8px'
+  padding:'8%',
 },
+
 
 iconAbout:{
   width:'25px',
   height:'25px',
-  marginLeft: '-60px'
+  marginLeft: '0'
 },
 
 aboutEditIcon:{
-  width:'18px',
-  height:'18px',
-  top: '5px',
-  right: '-55px',
-  position: 'absolute',
+  position:'absolute',
+  width: 18,
+  height: 18,
+  marginTop:'34%',
 },
 
-aboutEditIcon:{
-  width:'18px',
-  height:'18px',
-  top: '5px',
-  right: '-55px',
+aboutIconBox:{
   position: 'absolute',
+  float: 'right',
+  right: '15%'
 },
 
-// Phone section
+// // Phone section
 
 PhoneBox:{
   position:'relative',
-  display:'flex',
   flexDirection:'row',
-  flexWrap:'wrap',
-  justifyContent:'space-evenly',
-  padding:25,
-
+  padding:'8%',
 },
 
 iconPhone:{
   width:'25px',
   height:'25px',
-  marginLeft: '-60px'
+  marginLeft: '0'
 },
 
 iconPhoneEdit:{
   width:'18px',
-  height:'18px',
-  top: '5px',
-  right: '-55px',
-  position: 'absolute',
+  position:'absolute',
+  width: 18,
+  height: 18,
+  marginTop:'34%',
 },
 
-// Email section
+iconPhoneBox:{
+  position: 'absolute',
+  float: 'right',
+  right: '15%'
+},
+
+// // Email section
 
 emailBox:{
   position:'relative',
-  display:'flex',
   flexDirection:'row',
-  flexWrap:'wrap',
-  justifyContent:'space-evenly',
-  padding:25,
-  borderTopWidth:'1px',
-  borderTopColor:'#e9e9e9',
-  marginLeft: '8px',
-  marginRight:'8px'
+  padding:'8%',
 },
 
 iconEmail:{
   width:'25px',
   height:'25px',
-  marginLeft: '-60px'
+  marginLeft: '0'
 },
 
 iconEmailEdit:{
   width:'18px',
-  height:'18px',
-  top: '5px',
-  right: '-55px',
-  position: 'absolute',
+  position:'absolute',
+  width: 18,
+  height: 18,
+  marginTop:'34%',
 },
+
 
 bottomWave:{
  width:'100%',
  height:'200px',
  position:'relative',
+ marginTop: '15%',
  zIndex:999
 }
 
