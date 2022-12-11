@@ -89,18 +89,20 @@ export default class Login extends Component {
             style={styles.btnSignUp}
             onPress={() => this.props.navigation.navigate('TopTabNavigator')}
           >
-            <Text style={styles.btnSignUpText}>SIGNIN</Text>
+            <Text style={styles.btnSignUpText}>SIGN IN</Text>
           </TouchableHighlight>
 
           {/* Signup Button */}
-          <TouchableHighlight
+         
+            <Text style={styles.signUpText}>
+              Don't have an account?
+              <TouchableHighlight
             onPress={() => this.props.navigation.navigate("SignUp")}
           >
-            <Text style={styles.signUpText}>
-              Don't have an account?{" "}
-              <Text style={styles.signUpLink}>SignUp</Text>
+              <Text style={styles.signUpLink}>Sign Up</Text>
+              </TouchableHighlight>
             </Text>
-          </TouchableHighlight>
+          
           <Image
             source={require("../assets/wave.png")}
             style={styles.bottomImg}
