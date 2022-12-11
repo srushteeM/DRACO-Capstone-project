@@ -1,22 +1,15 @@
 import React, { Component } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Button,
-  TouchableHighlight,
-  Image,
-  Alert,
-} from "react-native";
+import {TouchableHighlight, Image,  Alert, View,TextInput,Text} from "react-native";
+import { styles } from "./css/signup";
 import AppLogo from "../components/AppLogo";
+import { Images } from "../Images";
+
 export default class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
       username: "",
       email: "",
-      password: "",
       confirmPassword: "",
     };
   }
@@ -27,134 +20,108 @@ export default class SignUp extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View>
+      <View style={styles.parentBox}>
         {/* Logo of the app */}
         <AppLogo />
 
         {/* Image on the signup page */}
-        <Image source={{ uri: "#" }} />
-        <View style={styles.inputContainer}>
+        <View style={styles.childBox}>
           <Image
-            style={styles.inputIcon}
-            source={{
-              uri: "https://png.icons8.com/message/ultraviolet/50/3498db",
-            }}
+            source={require("../assets/circle-top.png")}
+            style={styles.imgCircle}
           />
-          <TextInput
-            style={styles.inputs}
-            placeholder="Username"
-            underlineColorAndroid="transparent"
-            onChangeText={(name) => this.setState({ username: name })}
-          />
-        </View>
-        <View style={styles.inputContainer}>
           <Image
-            style={styles.inputIcon}
-            source={{
-              uri: "https://png.icons8.com/message/ultraviolet/50/3498db",
-            }}
+            source={require("../assets/logo-heal.png")}
+            style={styles.imgLogo}
           />
-          <TextInput
-            style={styles.inputs}
-            placeholder="Email Address"
-            keyboardType="email-address"
-            underlineColorAndroid="transparent"
-            onChangeText={(email) => this.setState({ email: email })}
+          <Image
+            source={require("../assets/signup-img.svg")}
+            style={styles.imgYoga}
           />
-        </View>
+          <Image
+            source={require("../assets/right-shape.png")}
+            style={styles.imgShape}
+          />
+          <View>
+            <Image
+              source={require("../assets/user.jpeg")}
+              style={styles.imgIcon}
+            />
+            <TextInput
+              placeholder="Username"
+              style={styles.inputField}
+              underlineColorAndroid="transparent"
+              onChangeText={(name) => this.setState({ username: name })}
+            />
+          </View>
 
-        <View style={styles.inputContainer}>
-          <Image
-            style={styles.inputIcon}
-            source={{
-              uri: "https://png.icons8.com/key-2/ultraviolet/50/3498db",
-            }}
-          />
-          <TextInput
-            style={styles.inputs}
-            placeholder="Password"
-            secureTextEntry={true}
-            underlineColorAndroid="transparent"
-            onChangeText={(password) => this.setState({ password: password })}
-          />
-        </View>
-        <View style={styles.inputContainer}>
-          <Image
-            style={styles.inputIcon}
-            source={{
-              uri: "https://png.icons8.com/message/ultraviolet/50/3498db",
-            }}
-          />
-          <TextInput
-            style={styles.inputs}
-            placeholder="Confirm Password"
-            underlineColorAndroid="transparent"
-            onChangeText={(confirmPassword) =>
-              this.setState({ confirmPassword: confirmPassword })
-            }
-          />
-        </View>
-        <TouchableHighlight
-          style={[styles.buttonContainer, styles.loginButton]}
-          onPress={() => this.onClickListener("login")}
-        >
-          <Text style={styles.loginText}>SignUp</Text>
-        </TouchableHighlight>
+          <View>
+            <Image
+              source={require("../assets/icon-mail.png")}
+              style={styles.imgIcon}
+            />
+            <TextInput
+              placeholder="Email Address"
+              style={styles.inputField}
+              keyboardType="email-address"
+              underlineColorAndroid="transparent"
+              onChangeText={(email) => this.setState({ email: email })}
+            />
+          </View>
 
-        <TouchableHighlight
-          style={styles.buttonContainer}
-          onPress={() => this.onClickListener("register")}
-        >
-          <Text>Already have an account? Login</Text>
-        </TouchableHighlight>
+          <View>
+            <Image
+              source={require("../assets/icon-lock.png")}
+              style={styles.imgIcon}
+            />
+            <TextInput
+              placeholder="Password"
+              style={styles.inputField}
+              secureTextEntry={true}
+              underlineColorAndroid="transparent"
+              onChangeText={(password) => this.setState({ password: password })}
+            />
+          </View>
+
+          <View>
+            <Image
+              source={require("../assets/icon-lock.png")}
+              style={styles.imgIcon}
+            />
+            <TextInput
+              placeholder="Confirm Password"
+              style={styles.inputField}
+              secureTextEntry={true}
+              underlineColorAndroid="transparent"
+              onChangeText={(confirmPassword) =>
+                this.setState({ confirmPassword: confirmPassword })
+              }
+            />
+          </View>
+
+          <TouchableHighlight
+            style={styles.btnSignUp}
+            onPress={() => this.onClickListener("login")}
+          >
+            <Text style={styles.btnSignUpText}>SignUp</Text>
+          </TouchableHighlight>
+
+          <TouchableHighlight
+            onPress={() => this.props.navigation.navigate("Login")}
+          >
+            <Text style={styles.btnSignInText}>
+              Already have an account ?{" "}
+              <Text style={styles.signInLink}>Signin</Text>
+            </Text>
+          </TouchableHighlight>
+          <Image
+            source={require("../assets/wave.png")}
+            style={styles.bottomImg}
+          />
+        </View>
+      </View>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#DCDCDC",
-  },
-  inputContainer: {
-    borderBottomColor: "#F5FCFF",
-    backgroundColor: "#FFFFFF",
-    borderRadius: 30,
-    borderBottomWidth: 1,
-    width: 250,
-    height: 45,
-    marginBottom: 20,
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  inputs: {
-    height: 45,
-    marginLeft: 16,
-    borderBottomColor: "#FFFFFF",
-    flex: 1,
-  },
-  inputIcon: {
-    width: 30,
-    height: 30,
-    marginLeft: 15,
-    justifyContent: "center",
-  },
-  buttonContainer: {
-    height: 45,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    marginBottom: 20,
-    width: 250,
-    borderRadius: 30,
-  },
-  loginButton: {
-    backgroundColor: "#00b5ec",
-  },
-  loginText: {
-    color: "white",
-  },
-});

@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
-import { Text, View } from 'react-native'
-import Login from './screens/Login'
-import SignUp from './screens/SignUp'
-import ProfileScreen from './screens/ProfileScreen'
+// import { createAppContainer } from "react-navigation";
+import SwitchNavigator from './navigation/SwitchNavigator'
+import { NavigationContainer } from '@react-navigation/native';
+
+
 export default class APP extends Component {
   render() {
     return (
-     <ProfileScreen/>
+      <NavigationContainer>
+      <SwitchNavigator/>
+      </NavigationContainer>
+
     )
   }
 }
