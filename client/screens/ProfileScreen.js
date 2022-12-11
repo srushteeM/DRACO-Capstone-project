@@ -31,24 +31,8 @@ export default class ProfileScreen extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <View style={styles.headerContent}>
-            <Image
-              style={styles.avatar}
-              source={{
-                uri: "https://bootdey.com/img/Content/avatar/avatar6.png",
-              }}
-            />
-            <TouchableHighlight>
-              <Image
-                style={styles.icon}
-                source={{
-                  uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwaZahYMhgJM47ENIg34mIKavn1ve1ivGCXGYK5YbdRWiCk65ReUVB_DeF8P07GBC4Dl4&usqp=CAU",
-                }}
-              />
-            </TouchableHighlight>
-
+        <View View style={styles.container}>
+          <View style={styles.header}>
             {/* Profile picture */}
             <View style={styles.userBox}>
               <Image
@@ -80,7 +64,7 @@ export default class ProfileScreen extends Component {
             </View>
 
             {/* About */}
-            <View style={styles.userNameBox}>
+            <View style={styles.aboutBox}>
               <View>
                 <Image
                   style={styles.iconAbout}
@@ -90,7 +74,7 @@ export default class ProfileScreen extends Component {
               <View>
                 <Text style={styles.info}>About Me:{this.state.aboutMe}</Text>
               </View>
-              <TouchableHighlight>
+              <TouchableHighlight style={styles.aboutIconBox}>
                 <Image
                   style={styles.aboutEditIcon}
                   source={require("../assets/pencil.svg")}
@@ -109,7 +93,7 @@ export default class ProfileScreen extends Component {
               <View>
                 <Text style={styles.info}>Phone:{this.state.phone}</Text>
               </View>
-              <TouchableHighlight>
+              <TouchableHighlight style={styles.iconPhoneBox}>
                 <Image
                   style={styles.iconPhoneEdit}
                   source={require("../assets/pencil.svg")}
@@ -139,7 +123,6 @@ export default class ProfileScreen extends Component {
             </View>
           </View>
         </View>
-      </View>
     );
   }
 }

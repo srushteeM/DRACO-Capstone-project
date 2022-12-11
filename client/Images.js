@@ -23,4 +23,7 @@ export const Images = [
     {
         image: require('../client/assets/login-img.svg'),
     },
+    {
+        image: require('../client/assets/buttom-shape-hills.svg'),
+    },
 ]

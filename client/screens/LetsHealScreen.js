@@ -9,7 +9,8 @@ import {
   ScrollView,
   FlatList,
 } from "react-native";
-// import { styles } from "./css/login";
+//import { Images } from "../Images";
+
 export default class LetsHealScreen extends Component {
   constructor(props) {
     super(props);
@@ -18,27 +19,26 @@ export default class LetsHealScreen extends Component {
         {
           id: 1,
           title: "REIKI",
-          image: "https://img.icons8.com/color/70/000000/cottage.png",
-          screen: "ReikiScreen",
+          image: "https://cdn-icons-png.flaticon.com/512/3696/3696322.png",
+          screen:"ReikiScreen"
         },
         {
           id: 2,
           title: "YOGA",
-          image:
-            "https://img.icons8.com/color/70/000000/administrator-male.png",
-          screen: "YogaScreen",
+          image: "https://cdn-icons-png.flaticon.com/512/2043/2043787.png",
+          screen:"YogaScreen"
         },
         {
           id: 3,
           title: "MEDITATION",
-          image: "https://img.icons8.com/color/70/000000/filled-like.png",
-          screen: "MeditationScreen",
+          image: "https://cdn-icons-png.flaticon.com/512/384/384156.png",
+          screen:"MeditationScreen"
         },
         {
           id: 4,
           title: "THERAPIST",
-          image: "https://img.icons8.com/color/70/000000/facebook-like.png",
-          screen: "TherapistScreen",
+          image: "https://cdn-icons-png.flaticon.com/512/1971/1971437.png",
+          screen:"TherapistScreen"
         },
       ],
     };
@@ -51,12 +51,13 @@ export default class LetsHealScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View>
+        <View style={styles.logoBox}>
           <Image
             source={require("../assets/logo-heal.png")}
             style={styles.imgLogo}
           />
         </View>
+
         <FlatList
           style={styles.list}
           contentContainerStyle={styles.listContainer}
@@ -87,6 +88,10 @@ export default class LetsHealScreen extends Component {
             );
           }}
         />
+        <Image
+          source={require("../assets/buttom-shape-hills.svg")}
+          style={styles.bottomImg}
+        />
       </View>
     );
   }
@@ -95,32 +100,39 @@ export default class LetsHealScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 20,
+    margin: 0,
+    backgroundColor: "#fff",
   },
-  list: {
-    paddingHorizontal: 5,
-    backgroundColor: "#E6E6E6",
-  },
-  listContainer: {
-    alignItems: "center",
-  },
-  /******** card **************/
-  card: {
-    shadowColor: "#00000021",
 
+  logoBox: {
+    height: "100px",
+    width: "100%",
+    justifyContent: "space-evenly",
+    display: "flex",
+    marginTop: "15%",
+  },
+
+  listContainer: {
+    margin: 12,
+  },
+
+  /******** card **************/
+
+  card: {
     shadowOffset: {
       width: 0,
-      height: 6,
+      height: 2,
     },
-    shadowOpacity: 0.37,
-    shadowRadius: 7.49,
 
-    elevation: 12,
-    marginVertical: 10,
+    shadowOpacity: 0.3,
+    shadowRadius: 6,
+    elevation: 1,
+    marginVertical: 1,
     backgroundColor: "white",
-    flexBasis: "42%",
-    marginHorizontal: 10,
+    flexBasis: "50%",
+    marginHorizontal: 1,
   },
+
   cardHeader: {
     paddingVertical: 17,
     paddingHorizontal: 16,
@@ -130,10 +142,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+
   cardContent: {
     paddingVertical: 12.5,
     paddingHorizontal: 16,
   },
+
   cardFooter: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -143,23 +157,34 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 1,
     borderBottomRightRadius: 1,
   },
+
   cardImage: {
     height: 70,
     width: 70,
     alignSelf: "center",
   },
+
   title: {
     fontSize: 18,
     flex: 1,
     alignSelf: "center",
-    color: "#696969",
+    // color:"#696969"
   },
+
   imgLogo: {
-    height: "30px",
-    width: "120px",
+    height: "55px",
+    width: "175px",
     left: "50%",
     top: "10%",
     zIndex: "9",
     transform: "translate(-50%, -15px)",
+  },
+
+  bottomImg: {
+    position: "absolute",
+    width: "100%",
+    height: "200px",
+    bottom: 0,
+    zIndex: 999,
   },
 });

@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
 parentBox: {
     position:'relative',
     // backgroundColor:'lavender',
-    height:'100vh'
+    height:'100%'
 },
 
 childBox:{
@@ -14,9 +14,9 @@ childBox:{
     // maxWidth:'350px',
     position:'relative',
     left:'50%',
-    transform: 'translate(-50%, 0px)',
-    padding:'0px',
-    boxShadow: '0 1px 30px rgb(197 197 197 / 30%)'
+    transform: 'translate(-50%, 0%)',
+    padding:'0',
+    // boxShadow: '0 1px 30px rgb(197 197 197 / 30%)'
 },
 
 welcomeText:{
@@ -28,27 +28,27 @@ welcomeText:{
     borderRadius: '25px',
     paddingTop: '5px',
     paddingRight: '15px',
-    paddingLeft: '15px',
+    paddingLeft:'15px',
     paddingBottom: '5px',
     position: 'relative',
     marginTop: '10px',
     left:'50%',
-    transform: 'translate(-50%, 0px)'
+    transform: 'translate(-50%, 0%)'
 },
 
 inputField:{
     position:'relative',
     outLine:'none',
-    border:'0',
+    border:0,
     paddingTop: '12px',
-    paddingLeft: '50px',
-    paddingRight: '10px',
+    paddingLeft: '40px',
+    paddingRight: '40px',
     paddingBottom: '12px',
-    marginTop: '15px',
-    marginLeft: '20px',
-    marginRight: '20px',
-    borderRadius: '25px',
-    fontWeight: '600',
+    marginTop: '20px',
+    marginLeft: '25px',
+    marginRight:'25px',
+    borderRadius: '50px',
+    fontWeight: 600,
     color: '#666666',
     fontSize: '0.8rem',
     backgroundColor:'#eee9f2',
@@ -58,18 +58,18 @@ forgotText:{
     textAlign:'right',
     color:'#838383',
     marginTop:'15px',
-    fontWeight:'500',
+    fontWeight:500,
     position:'relative',
-    right:'8%'
+    right:'30px'
 },
 
 btnSignUp:{
     backgroundColor:'#8530d1',
-    borderRadius: '25px',
-    left: '50%',
+    borderRadius:'25px',
+    left:'50%',
     width:'88%',
     padding:'10px',
-    boxShadow: '0 1px 18px rgb(133 48 209 / 51%)',
+    boxShadow: '0 1 18 rgb(133 48 209 / 51%)',
     transform: 'translate(-50%, 15px);'
 },
 
@@ -119,8 +119,8 @@ imgIcon:{
     height:'20px',
     width:'20px',
     zIndex:'9',
-    top: '45%',
-    left: '12%',
+    top: '50%',
+    left: '10%',
 },
 
 // Bottom wave image   
