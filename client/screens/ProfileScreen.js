@@ -9,22 +9,67 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
+import * as ImagePicker from "expo-image-picker";
+import * as Permissions from "expo-permissions";
 import firebase from "firebase";
 import db from "../config";
 export default class ProfileScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      profileImage: "",
+      profileImage: "#",
       username: "",
       aboutMe: "",
       phone: " ",
-      email: "",
+      email: firebase.auth().currentUser.email,
       docId: "",
       aboutMeEditable: false,
       phoneEditable: false,
     };
   }
+  selectPicture = async () => {
+    const { cancelled, uri } = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    if (!cancelled) {
+      this.uploadImage(uri, this.state.username);
+    }
+  };
+
+  uploadImage = async (uri, imageName) => {
+    var response = await fetch(uri);
+    var blob = await response.blob();
+
+    var ref = firebase
+      .storage()
+      .ref()
+      .child("user_profiles/" + imageName);
+
+    return ref.put(blob).then((response) => {
+      this.fetchImage(imageName);
+    });
+  };
+
+  fetchImage = (imageName) => {
+    var storageRef = firebase
+      .storage()
+      .ref()
+      .child("user_profiles/" + imageName);
+
+    // Get the download URL
+    storageRef
+      .getDownloadURL()
+      .then((url) => {
+        this.setState({ profileImage: url });
+      })
+      .catch((error) => {
+        this.setState({ profileImage: "#" });
+      });
+  };
 
   // Function to fetch user information from database
   fetchUserData = () => {
@@ -38,7 +83,7 @@ export default class ProfileScreen extends Component {
           this.setState({
             email: data.email,
             username: data.username,
-
+            profileImage: doc.data().profileImage,
             aboutMe: data.aboutMe,
             phone: data.phone,
             docId: doc.id,
@@ -48,6 +93,7 @@ export default class ProfileScreen extends Component {
   };
   componentDidMount() {
     this.fetchUserData();
+    this.fetchImage(this.state.username)
   }
 
   // Function to change user information in database
@@ -69,10 +115,10 @@ export default class ProfileScreen extends Component {
           <View style={styles.userBox}>
             <Image
               style={styles.avatar}
-              source={require("../assets/user.svg")}
+              source={{ uri:this.state.profileImage}}
             />
 
-            <TouchableHighlight>
+            <TouchableHighlight onPress={() => this.selectPicture()}>
               <Image
                 style={styles.editProfile}
                 source={require("../assets/pencil.svg")}
@@ -173,7 +219,10 @@ export default class ProfileScreen extends Component {
               <TouchableHighlight
                 // style={styles.button}
                 onPress={() => {
-                  this.setState({aboutMeEditable:false,phoneEditable:false});
+                  this.setState({
+                    aboutMeEditable: false,
+                    phoneEditable: false,
+                  });
                   this.updateUserData();
                 }}
               >
@@ -182,7 +231,6 @@ export default class ProfileScreen extends Component {
               <TouchableHighlight
                 // style={styles.button}
                 onPress={() => {
-                  
                   this.props.navigation.navigate("Login");
                   firebase.auth().signOut();
                 }}
