@@ -17,6 +17,7 @@ export default class ProfileScreen extends Component {
       aboutMe: "",
       phone: " ",
       email: "",
+      logout: "",
     };
   }
 
@@ -112,6 +113,20 @@ export default class ProfileScreen extends Component {
               <View>
                 <Text style={styles.info}>
                   Email address:{this.state.email}
+                </Text>
+              </View>
+            </View>
+            {/* Logout */}
+            <View style={styles.logoutBox}>
+              <View>
+                <Image
+                  style={styles.iconLogout}
+                  source={"https://cdn-icons-png.flaticon.com/512/4034/4034329.png"}
+                />
+              </View>
+              <View>
+                <Text style={styles.info}>
+                  Logout{this.state.logout}
                 </Text>
               </View>
             </View>

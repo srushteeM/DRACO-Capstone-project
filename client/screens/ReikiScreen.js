@@ -7,6 +7,7 @@ import {
   Linking,
   Platform,
 } from "react-native";
+import { styles } from "../screens/css/commonContentBox";
 
 class ReikiScreen extends Component {
   openReikiWebsite = () => {
@@ -23,14 +24,14 @@ class ReikiScreen extends Component {
   };
   render() {
     return (
-      <View>
-        <View>
-          <Image
-            source={require("../assets/ReikiLogo.jpg")}
-            style={{ width: "30%", height: "30%", topMargin: "30%" }}
+      <View style={{backgroundColor:'#fff', height:'100vh'}}>
+        <View style={styles.logosBox}>
+          <Image style={styles.imgTop}
+            source={"https://cdn-icons-png.flaticon.com/512/8086/8086219.png"}
           />
+        <Text style={styles.text}>REIKI</Text>  
         </View>
-        <Text>
+        <Text style={styles.contentBox}>
           Reiki is a Japanese technique for stress reduction and relaxation that
           also promotes healing. The word Reiki is made of two Japanese words -
           Rei which means "God's Wisdom or the Higher Power" and Ki which is
@@ -47,15 +48,15 @@ class ReikiScreen extends Component {
           techniques to relieve side effects and promote recovery.
         </Text>
         <TouchableHighlight onPress={() => this.openReikiWebsite()}>
-          <Text>Know more...</Text>
+          <Text style={styles.knowMoreBtn}>Know more...</Text>
         </TouchableHighlight>
-        <Text>
+        <Text style={styles.shortText}>
           A reiki master is someone who has been attuned to the highest level of
           reiki. The attunement process opens up your body so that you're able
           to transmit healing energy, and lasts for your entire life.
         </Text>
         <TouchableHighlight onPress={() => this.openDialScreen()}>
-          <Text>Contact Reiki Master</Text>
+          <Text style={styles.contactBtn}>Contact Reiki Master</Text>
         </TouchableHighlight>
       </View>
     );

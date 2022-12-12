@@ -7,6 +7,7 @@ import {
   Linking,
   Platform,
 } from "react-native";
+import { styles } from "../screens/css/commonContentBox";
 
 class MeditationScreen extends Component {
   openMeditationWebsite = () => {
@@ -23,14 +24,14 @@ class MeditationScreen extends Component {
   };
   render() {
     return (
-      <View>
-        <View>
-          <Image
-            source={require("../assets/MeditationLogo.png")}
-            style={{ width: "30%", height: "30%", topMargin: "30%" }}
+      <View style={{backgroundColor:'#fff', height: '100vh'}}>
+        <View style={styles.logosBox}>
+        <Image style={styles.imgTop}
+            source={"https://cdn-icons-png.flaticon.com/512/2906/2906496.png"}
           />
+        <Text style={styles.text}>MEDITATION</Text>  
         </View>
-        <Text>
+        <Text style={styles.contentBox}>
           Meditation is a practice in which an individual uses a technique such
           as mindfulness, or focusing the mind on a particular object, thought,
           or activity to train attention and awareness, and achieve a mentally
@@ -47,16 +48,16 @@ class MeditationScreen extends Component {
           (psychological, neurological, and cardiovascular) and other areas.
         </Text>
         <TouchableHighlight onPress={() => this.openMeditationWebsite()}>
-          <Text>Know more...</Text>
+          <Text style={styles.knowMoreBtn}>Know more...</Text>  
         </TouchableHighlight>
-        <Text>
+        <Text style={styles.shortText}>
           A meditation coach is typically someone that's right there next to you
           as a guide–someone who's walking the path with you. The coach knows
           what you need to do to thrive and can help you blaze a new trail for a
           life you want to create.
         </Text>
         <TouchableHighlight onPress={() => this.openDialScreen()}>
-          <Text>Contact Meditation Coach</Text>
+        <Text style={styles.contactBtn}>Contact Meditation Coach</Text>
         </TouchableHighlight>
       </View>
     );
