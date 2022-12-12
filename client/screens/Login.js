@@ -4,7 +4,8 @@ import { StyleSheet, Text, View, TextInput, Button, TouchableHighlight, Image, A
 //import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import AppLogo from "../components/AppLogo";
 import { styles } from "./css/login";
-import { Images } from "../Images";
+import firebase from 'firebase';
+import db from '../config';
 
 export default class Login extends Component {
   constructor(props) {
@@ -14,7 +15,19 @@ export default class Login extends Component {
       password: "",
     };
   }
-
+  userLogin = (emailId, password) => {
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        this.props.navigation.navigate("Home");
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        return alert(errorMessage);
+      });
+  };
   onClickListener = (viewId) => {
     Alert.alert("Alert", "Button pressed " + viewId);
   };
@@ -87,7 +100,7 @@ export default class Login extends Component {
           {/* Login Button */}
           <TouchableHighlight
             style={styles.btnSignUp}
-            onPress={() => this.props.navigation.navigate('Home')}
+            onPress={() => this.userLogin(this.state.email,this.state.password)}
           >
             <Text style={styles.btnSignUpText}>SIGN IN</Text>
           </TouchableHighlight>
