@@ -9,9 +9,8 @@ import {
 } from "react-native";
 import { styles } from "./css/signup";
 import AppLogo from "../components/AppLogo";
-import firebase from 'firebase';
-import db from '../config';
-
+import firebase from "firebase";
+import db from "../config";
 
 export default class SignUp extends Component {
   constructor(props) {
@@ -19,32 +18,29 @@ export default class SignUp extends Component {
     this.state = {
       username: "",
       email: "",
-      confirmPassword: "",
+      password: "",
+      phone: null,
     };
   }
-  userSignUp = (email, password, confirmPassword) => {
-    if (password !== confirmPassword) {
-      return alert("password doesn't match\nCheck your password.");
-    } else {
-      firebase
-        .auth()
-        .createUserWithEmailAndPassword(email, password)
-        .then(() => {
-          db.collection("users").add({
-            username: this.state.username,
-
-            email: this.state.email,
-          });
-          this.props.navigation.navigate("Home");
-          return alert("User Added Successfully");
-        })
-        .catch((error) => {
-          // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          return alert(errorMessage);
+  userSignUp = (email, password) => {
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        db.collection("users").add({
+          username: this.state.username,
+          phone: this.state.phone,
+          email: this.state.email,
         });
-    }
+        this.props.navigation.navigate("Home");
+        return alert("User Added Successfully");
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        return alert(errorMessage);
+      });
   };
 
   onClickListener = (viewId) => {
@@ -109,13 +105,11 @@ export default class SignUp extends Component {
                 style={styles.imgIcon}
               />
               <TextInput
-                placeholder="Password"
+                placeholder="Phone number"
                 style={styles.inputField}
-                secureTextEntry={true}
+                keyboardType="number"
                 underlineColorAndroid="transparent"
-                onChangeText={(password) =>
-                  this.setState({ password: password })
-                }
+                onChangeText={(phone) => this.setState({ phone: phone })}
               />
             </View>
 
@@ -125,12 +119,12 @@ export default class SignUp extends Component {
                 style={styles.imgIcon}
               />
               <TextInput
-                placeholder="Confirm Password"
+                placeholder="Password"
                 style={styles.inputField}
                 secureTextEntry={true}
                 underlineColorAndroid="transparent"
-                onChangeText={(confirmPassword) =>
-                  this.setState({ confirmPassword: confirmPassword })
+                onChangeText={(password) =>
+                  this.setState({ password: password })
                 }
               />
             </View>
@@ -148,16 +142,15 @@ export default class SignUp extends Component {
               <Text style={styles.btnSignUpText}>SignUp</Text>
             </TouchableHighlight>
 
-          
-              <Text style={styles.btnSignInText}>
-                Already have an account ?
-                <TouchableHighlight
-              onPress={() => this.props.navigation.navigate("Login")}
-            >
+            <Text style={styles.btnSignInText}>
+              Already have an account ?
+              <TouchableHighlight
+                onPress={() => this.props.navigation.navigate("Login")}
+              >
                 <Text style={styles.signInLink}>Sign In</Text>
-                </TouchableHighlight>
-              </Text>
-           
+              </TouchableHighlight>
+            </Text>
+
             <Image
               source={require("../assets/wave.png")}
               style={styles.bottomImg}
