@@ -54,14 +54,14 @@ export default class ProfileScreen extends Component {
     });
   };
 
-  fetchImage = (imageName) => {
-    var storageRef = firebase
+  fetchImage = async (imageName) => {
+    var storageRef =  firebase
       .storage()
       .ref()
       .child("user_profiles/" + imageName);
 
     // Get the download URL
-    storageRef
+    await storageRef
       .getDownloadURL()
       .then((url) => {
         this.setState({ profileImage: url });
@@ -83,7 +83,7 @@ export default class ProfileScreen extends Component {
           this.setState({
             email: data.email,
             username: data.username,
-            profileImage: doc.data().profileImage,
+            //profileImage: doc.data().profileImage,
             aboutMe: data.aboutMe,
             phone: data.phone,
             docId: doc.id,
@@ -93,7 +93,7 @@ export default class ProfileScreen extends Component {
   };
   componentDidMount() {
     this.fetchUserData();
-    this.fetchImage(this.state.username)
+    this.fetchImage(this.state.username);
   }
 
   // Function to change user information in database
@@ -115,7 +115,7 @@ export default class ProfileScreen extends Component {
           <View style={styles.userBox}>
             <Image
               style={styles.avatar}
-              source={{ uri:this.state.profileImage}}
+              source={{ uri: this.state.profileImage }}
             />
 
             <TouchableHighlight onPress={() => this.selectPicture()}>
