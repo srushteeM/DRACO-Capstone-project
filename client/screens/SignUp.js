@@ -31,6 +31,7 @@ export default class SignUp extends Component {
           username: this.state.username,
           phone: this.state.phone,
           email: this.state.email,
+          aboutMe: "",
         });
         this.props.navigation.navigate("Home");
         return alert("User Added Successfully");
