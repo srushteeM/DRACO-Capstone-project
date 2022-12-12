@@ -87,7 +87,7 @@ export default class Login extends Component {
           {/* Login Button */}
           <TouchableHighlight
             style={styles.btnSignUp}
-            onPress={() => this.props.navigation.navigate('TopTabNavigator')}
+            onPress={() => this.props.navigation.navigate('Home')}
           >
             <Text style={styles.btnSignUpText}>SIGN IN</Text>
           </TouchableHighlight>
