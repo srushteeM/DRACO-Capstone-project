@@ -15,7 +15,7 @@ export default class Login extends Component {
       password: "",
     };
   }
-  userLogin = (emailId, password) => {
+  userLogin = (email, password) => {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
