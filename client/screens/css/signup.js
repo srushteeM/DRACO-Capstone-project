@@ -3,28 +3,65 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
 
 parentBox: {
-    position:'relative',
-    // backgroundColor:'lavender',
-    height:'auto'
+    backgroundColor:'#fff',
+    height:'100vh'
   },
 
 childBox:{
+    padding:'0',
     backgroundColor:'white',
-    maxHeight:'auto',
-    // maxWidth:'350px',
+    width:'100%',
+    height:'100vh',
     position:'relative',
-    left:'50%',
-    transform: 'translate(-50%, 0px)',
-    padding:'0px',
-    boxShadow: '0 1px 30px rgb(197 197 197 / 30%)'
+
 },
+
+// // Right circle shape
+imgShape:{
+    height: '130px',
+    width:'70px',
+    position: 'absolute',
+    right: '0',
+    top: '8%',
+    opacity: '0.5'
+},
+
+// // Top left circle shape image
+imgCircle:{
+    height:'130px',
+    width:'130px',
+    position:'absolute',
+    left:'0',
+    top:'0',
+},  
+
+// logo img
+imgLogo:{
+    zIndex:9,
+    height: '5%',
+    width: '45%',
+    left: '50%',
+    top:'8%',
+    transform: 'translate(-50%, 0%)'
+},
+
+// // Yoga image
+imgYoga:{
+    position:'relative',
+    height:'300px',
+    width:'80%',
+    marginBottom:'5%',
+    left:'50%',
+    transform: 'translate(-50%, 10%)'
+},
+
 
 inputField:{
     position:'relative',
     outLine:'none',
     border:'0',
     paddingTop: '12px',
-    paddingLeft: '50px',
+    paddingLeft: '60px',
     paddingRight: '10px',
     paddingBottom: '12px',
     marginTop: '15px',
@@ -33,7 +70,7 @@ inputField:{
     borderRadius: '25px',
     fontWeight: '600',
     color: '#666666',
-    fontSize: '0.8rem',
+    fontSize: '100%',
     backgroundColor:'#eee9f2',
 },
 
@@ -67,27 +104,7 @@ signInLink:{
     fontWeight:'700'
 },
 
-// Top left circle shape image
-imgCircle:{
-    height:'130px',
-    width:'130px',
-    position:'absolute',
-    left:'0',
-    top:'0',
-    backGround:'no-repeat'
-},  
-
-// logo img
-imgLogo:{
-    height: '30px',
-    width: '120px',
-    left: '50%',
-    top:'10%',
-    zIndex:'9',
-    transform: 'translate(-50%, -15px)'
-},
-
-// Input icons
+// // Input icons
 imgIcon:{
     position:'absolute',
     height:'20px',
@@ -97,32 +114,16 @@ imgIcon:{
     left: '12%',
 },
 
-// Bottom wave image   
+// // Bottom wave image   
 
 bottomImg:{
-    width:'100%',
-    height:'110px',
-    zIndex:'99'
-},
-
-// Yoga image
-imgYoga:{
-    height:'200px',
-    width:'230px',
-    marginBottom:'40px',
-    left:'50%',
-    transform: 'translate(-50%, 25px)'
-},
-
-// Right circle shape
-imgShape:{
-    height: '130px',
-    width:'70px',
+    width: '100vw',
+    height: '20%',
+    zIndex: 99,
     position: 'absolute',
-    right: '0',
-    top: '15%',
-    opacity: '0.5'
-}
+    bottom: 0
+},
+
 
 });
 

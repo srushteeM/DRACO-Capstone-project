@@ -167,13 +167,34 @@ iconEmailEdit:{
   marginTop:'34%',
 },
 
+// Logout section
+
+logoutBox:{
+  position:'relative',
+  flexDirection:'row',
+  padding:'8%',
+},
+
+iconLogout:{
+  width:'25px',
+  height:'25px',
+  marginLeft: '0'
+},
+
+iconEmailEdit:{
+  width:'18px',
+  position:'absolute',
+  width: 18,
+  height: 18,
+  marginTop:'34%',
+},
+
 
 bottomWave:{
- width:'100%',
+ width:'100wv',
  height:'200px',
  position:'relative',
- marginTop: '15%',
- zIndex:999
+ marginTop: '0',
 }
 
 });
