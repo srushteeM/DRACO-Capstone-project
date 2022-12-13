@@ -226,15 +226,6 @@ export default class ProfileScreen extends Component {
               >
                 <Text style={styles.saveBtn}>Save</Text>
               </TouchableHighlight>
-                {/* <TouchableHighlight 
-                // style={styles.button}
-                onPress={() => {
-                  this.props.navigation.navigate("Login");
-                  firebase.auth().signOut();
-                }}
-              >
-                <Text style={styles.saveBtn}>Logout</Text>
-              </TouchableHighlight> */}
             </View>
           </View>
 
