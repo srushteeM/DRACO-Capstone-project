@@ -167,9 +167,28 @@ iconEmailEdit:{
   marginTop:'34%',
 },
 
+// Ssave Buttons
+
+saveBtn:{
+  width: '30%',
+  marginTop:'10px',
+  marginLeft:'10px',
+  textAlign: 'center',
+  color:'#fff',
+  height: '22px',
+  borderRadius: '4px',
+  backgroundColor:'#8530d1'
+},
+
 // Logout section
 
-logoutBox:{
+logoutTxt:{
+  fontWeight: '700',
+  marginLeft:'10px',
+  fontSize: '100%'
+ },
+
+LogoutBox:{
   position:'relative',
   flexDirection:'row',
   padding:'8%',
@@ -191,10 +210,10 @@ iconEmailEdit:{
 
 
 bottomWave:{
- width:'100wv',
- height:'200px',
- position:'relative',
- marginTop: '0',
+  height: '200px',
+  position: 'relative',
+  width: '100vh',
+  bottom: '0'
 }
 
 });

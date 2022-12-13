@@ -63,7 +63,7 @@ export default class Login extends Component {
           {/* Email address input */}
           <View>
             <Image
-              source={require("../assets/user.jpeg")}
+              source={require("../assets/user.png")}
               style={styles.imgIcon}
             />
             <TextInput

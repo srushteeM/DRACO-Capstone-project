@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
 
     knowMoreBtn:{
         border: '1px solid #dddddd',
-        textDecoration: 'underline',
+        // textDecoration: 'underline',
         color: 'black',
         fontWeight: 700,
         fontSize: '100%',

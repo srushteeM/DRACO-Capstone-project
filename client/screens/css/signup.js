@@ -79,7 +79,7 @@ btnSignUp:{
     borderRadius: '25px',
     left: '50%',
     width:'88%',
-    padding:'10px',
+    padding:'13px',
     boxShadow: '0 1px 18px rgb(133 48 209 / 51%)',
     transform: 'translate(-50%, 25px);'
 },
@@ -95,7 +95,7 @@ btnSignUpText:{
 btnSignInText:{
     textAlign:'center',
     color:'#838383',
-    marginTop:'40px',
+    marginTop:'13%',
     fontWeight:'500'
 },
 

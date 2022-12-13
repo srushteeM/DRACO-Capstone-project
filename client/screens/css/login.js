@@ -59,14 +59,8 @@ imgShape:{
 
 welcomeText:{
     color:'#000',
-    // backgroundColor: '#eee9f2',
     textAlign: 'center',
     fontWeight: '500',
-    // borderRadius: '25px',
-    // paddingTop: '5px',
-    // paddingRight: '15px',
-    // paddingLeft:'15px',
-    // paddingBottom: '5px',
     marginTop: '40%'
 },
 
@@ -86,6 +80,10 @@ inputField:{
     color: '#666666',
     fontSize: '0.8rem',
     backgroundColor:'#eee9f2',
+
+    placeholder:{
+    fontSize:'1.5rem',
+    },
 },
 
 forgotText:{
@@ -102,7 +100,7 @@ btnSignUp:{
     borderRadius:'25px',
     left:'50%',
     width:'88%',
-    padding:'10px',
+    padding:'13px',
     boxShadow: '0 1 18 rgb(133 48 209 / 51%)',
     transform: 'translate(-50%, 15px);'
 },
@@ -118,7 +116,7 @@ btnSignUpText:{
 signUpText:{
     textAlign:'center',
     color:'#838383',
-    marginTop:'25px',
+    marginTop:'10%',
     fontWeight:'500' 
 },
 
