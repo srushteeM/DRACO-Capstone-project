@@ -75,7 +75,7 @@ export default class SignUp extends Component {
             />
             <View>
               <Image
-                source={require("../assets/user.jpeg")}
+                source={require("../assets/user.png")}
                 style={styles.imgIcon}
               />
               <TextInput
@@ -102,7 +102,7 @@ export default class SignUp extends Component {
 
             <View>
               <Image
-                source={require("../assets/icon-lock.png")}
+                source={require("../assets/call.png")}
                 style={styles.imgIcon}
               />
               <TextInput
