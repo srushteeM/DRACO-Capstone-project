@@ -167,13 +167,53 @@ iconEmailEdit:{
   marginTop:'34%',
 },
 
+// Ssave Buttons
+
+saveBtn:{
+  width: '30%',
+  marginTop:'10px',
+  marginLeft:'10px',
+  textAlign: 'center',
+  color:'#fff',
+  height: '22px',
+  borderRadius: '4px',
+  backgroundColor:'#8530d1'
+},
+
+// Logout section
+
+logoutTxt:{
+  fontWeight: '700',
+  marginLeft:'10px',
+  fontSize: '100%'
+ },
+
+LogoutBox:{
+  position:'relative',
+  flexDirection:'row',
+  padding:'8%',
+},
+
+iconLogout:{
+  width:'25px',
+  height:'25px',
+  marginLeft: '0'
+},
+
+iconEmailEdit:{
+  width:'18px',
+  position:'absolute',
+  width: 18,
+  height: 18,
+  marginTop:'34%',
+},
+
 
 bottomWave:{
- width:'100%',
- height:'200px',
- position:'relative',
- marginTop: '15%',
- zIndex:999
+  height: '200px',
+  position: 'relative',
+  width: '100vh',
+  bottom: '0'
 }
 
 });

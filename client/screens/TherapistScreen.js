@@ -7,6 +7,7 @@ import {
   Linking,
   Platform,
 } from "react-native";
+import { styles } from "../screens/css/commonContentBox";
 
 class TherapistScreen extends Component {
   openTherapistWebsite = () => {
@@ -23,25 +24,25 @@ class TherapistScreen extends Component {
   };
   render() {
     return (
-      <View>
-        <View>
-          <Image
-            source={require("../assets/TherapistLogo.png")}
-            style={{ width: "30%", height: "30%", topMargin: "30%" }}
+      <View style={{backgroundColor:'#fff', height: '100vh'}}>
+        <View style={styles.logosBox}>
+        <Image style={styles.imgTop}
+            source={"https://cdn-icons-png.flaticon.com/512/1971/1971504.png"}
           />
+          <Text style={styles.text}>THERAPIST</Text>  
         </View>
-        <Text>
+        <Text style={styles.contentBox}>
         Therapy can be an effective treatment for a host of mental and emotional problems. Simply talking about your thoughts and feelings with a supportive person can often make you feel better. It can be very healing, in and of itself, to voice your worries or talk about something that's weighing on your mind.
         </Text>
         <TouchableHighlight onPress={() => this.openTherapistWebsite()}>
-          <Text>Know more...</Text>
+          <Text style={styles.knowMoreBtn}>Know more...</Text>  
         </TouchableHighlight>
         
-        <Text>
+        <Text style={styles.shortText}> 
         Therapists guide you to see how your feelings, thoughts, choices, and actions affect each other. Learn things. Therapists teach lessons about emotions, thoughts, coping skills, facing fears, and more. Parents and caregivers may learn ways to help you too.
         </Text>
         <TouchableHighlight onPress={() => this.openDialScreen()}>
-          <Text>Contact Therapist</Text>
+          <Text style={styles.contactBtn}>Contact Therapist</Text>
         </TouchableHighlight>
       </View>
     );

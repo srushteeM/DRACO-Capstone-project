@@ -46,7 +46,7 @@ export default class CompanionScreen extends Component {
         <TouchableHighlight onPress={() => this.openDialScreen()} style={styles.phoneBox}>
           <Image 
             source={{
-              uri: "https://cdn-icons-png.flaticon.com/512/1034/1034131.png",
+              uri: "https://cdn-icons-png.flaticon.com/512/3059/3059590.png",
             }}
             style={styles.phoneIcon}
           />

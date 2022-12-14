@@ -21,10 +21,8 @@ export default class ProfileScreen extends Component {
       username: "",
       aboutMe: "",
       phone: " ",
-      email: firebase.auth().currentUser.email,
-      docId: "",
-      aboutMeEditable: false,
-      phoneEditable: false,
+      email: "",
+      logout: "",
     };
   }
   selectPicture = async () => {
@@ -226,19 +224,30 @@ export default class ProfileScreen extends Component {
                   this.updateUserData();
                 }}
               >
-                <Text>Save</Text>
+                <Text style={styles.saveBtn}>Save</Text>
               </TouchableHighlight>
-              <TouchableHighlight
+            </View>
+          </View>
+
+          {/* Logout Button */}
+          <View style={styles.LogoutBox}>
+            <View>
+              <Image
+                style={styles.iconLogout}
+                source={require("../assets/logout.png")}
+              />
+            </View>
+            <TouchableHighlight 
                 // style={styles.button}
                 onPress={() => {
                   this.props.navigation.navigate("Login");
                   firebase.auth().signOut();
                 }}
               >
-                <Text>Logout</Text>
+                <Text style={styles.logoutTxt}>Logout</Text>
               </TouchableHighlight>
-            </View>
           </View>
+
           <View>
             <Image
               style={styles.bottomWave}
