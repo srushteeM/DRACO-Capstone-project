@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, Image, TouchableHighlight, TextInput } from "react-native";
+import { Text, View, Image, TouchableHighlight, TextInput, StyleSheet } from "react-native";
 import { v4 as uuid } from "uuid";
 import firebase from "firebase";
 import db from "../config";
@@ -125,25 +125,25 @@ class CreatePost extends Component {
         {/* Profile picture */}
         <Image src={{ uri: this.state.profileImage }} />
         {/* Username */}
-        <Text>{this.state.username}</Text>
+        <Text style={styles.userNameTxt}>{this.state.username}</Text>
         {/* Input box for post message */}
         <TextInput
-        style={{marginTop: '10%',border: '3px solid black'}}
+        style={styles.textBox}
           placeholder="What's on your mind?"
           multiline={true}
           value={this.state.postMessage}
           onChangeText={(text) => this.setState({ postMessage: text })}
         />
-        <Image src={{ uri: this.state.postImage }} style={{width: '70%', height: '70%',marginTop:'20%'}}/>
+        <Image src={{ uri: this.state.postImage }} />
         {/* Button to upload Image */}
         <TouchableHighlight onPress={() => this.selectPicture()}>
-          <Text>Upload Image</Text>
+          <Text style={styles.uploadBtn}>Upload Image</Text>
         </TouchableHighlight>
         {/* Button to create post */}
         <TouchableHighlight onPress={() => this.createPost()}>
-          <Text>Post</Text>
+          <Text style={styles.uploadBtn}>Post</Text>
         </TouchableHighlight>
-      </View>
+      </View>   
     );
   }
 }
@@ -160,3 +160,44 @@ format of data to be saved in database.
 }
 
 */
+
+const styles = StyleSheet.create({
+  uploadBtn:{
+    backgroundColor:'#8530d1',
+    color:'#fff',
+    textAlign:'center',
+    lineHeight:'20px',
+    marginTop:'5px',
+    marginLeft:'10px',
+    marginRight:'10px',
+    borderTopRightRadius:'4px',
+    borderTopLeftRadius:'4px',
+    borderBottomRightRadius:'4px',
+    borderBottomLeftRadius:'4px',
+    padding:'5px'
+  },
+
+  textBox:{
+    marginTop: '2%',border: '1px solid grey',
+    backgroundColor: 'white',
+    height: '150px',
+    border: '1px solid grey',
+    margin: '12px',
+    padding: '10px'
+  },
+
+  userNameTxt:{
+  textAlign: 'left',
+  marginTop: '15px',
+  marginLeft:'15px',
+  textTransform:'capitalize',
+  fontWeight: 600,
+  fontSize: '1.5rem'
+  },
+  
+  iconUpload:{
+    height:'15px',
+    width:'15px'
+  }
+
+});
