@@ -25,11 +25,12 @@ export default class StoriesScreen extends Component {
     .collection("stories")
     .onSnapshot((snapshot) => {
       var stories = snapshot.docs.map((doc) => doc.data());
+      console.log(stories);
       this.setState({
         data: stories,
       });
     });
-    console.log(this.state.data);
+   
   };
 
 
@@ -39,7 +40,7 @@ export default class StoriesScreen extends Component {
 
 
   renderItem = ({ item,key }) => (
-    <View style={styles.card} key={this.state.unique_id}>
+    <View style={styles.card} key={item.unique_id}>
       <Image src={{ uri: item.profileImage }} />
       <Text style={styles.title}>{item.username}</Text>
       <Image src={{ uri: item.postImage }} style={styles.cardImage} />
