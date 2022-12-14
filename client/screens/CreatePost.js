@@ -15,11 +15,12 @@ class CreatePost extends Component {
       profileImage: "#",
       postMessage: "",
       postImage: "",
+      img_id: "",
     };
   }
-  fetchUserData = async() => {
+  fetchUserData = async () => {
     var email = firebase.auth().currentUser.email;
-    
+
     db.collection("users")
       .where("email", "==", email)
       .get()
@@ -29,14 +30,14 @@ class CreatePost extends Component {
           this.setState({
             email: data.email,
             username: data.username,
-            //profileImage: doc.data().profileImage,
+            profileImage: doc.data().profileImage,
 
             docId: doc.id,
           });
         });
       });
 
-      var storageRef =  firebase
+    var storageRef = firebase
       .storage()
       .ref()
       .child("user_profiles/" + this.state.username);
@@ -52,8 +53,49 @@ class CreatePost extends Component {
       });
   };
 
-  fetchImage =  async () => {
-   
+  selectPicture = async () => {
+    const { cancelled, uri } = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    if (!cancelled) {
+      const img_id = uuid();
+      this.setState({ img_id: img_id });
+      this.uploadImage(uri, img_id);
+    }
+  };
+  uploadImage = async (uri, img_id) => {
+    var response = await fetch(uri);
+    var blob = await response.blob();
+
+    var ref = firebase
+      .storage()
+      .ref()
+      .child("user_stories/" + img_id);
+
+    return ref.put(blob).then((response) => {
+      this.fetchImage(img_id);
+    });
+  };
+  fetchImage = async (img_id) => {
+    var storageRef = firebase
+      .storage()
+      .ref()
+      .child("user_stories/" + this.state.img_id);
+
+    // Get the download URL
+    await storageRef
+      .getDownloadURL()
+      .then((url) => {
+        this.setState({ postImage: url });
+        console.log(this.state.postImage);
+      })
+      .catch((error) => {
+        this.setState({ postImage: "#" });
+      });
   };
 
   createPost = () => {
@@ -62,12 +104,15 @@ class CreatePost extends Component {
       unique_id: unique_id,
       username: this.state.username,
       profileImage: this.state.profileImage,
-postMessage: this.state.postMessage,
+      postMessage: this.state.postMessage,
+      img_id: this.state.img_id,
+      postImage: this.state.postImage,
     });
-    this.setState({ 
-      postMessage:"",
-      postImage:""
-    })
+    this.setState({
+      postMessage: "",
+      postImage: "",
+      img_id:""
+    });
   };
 
   componentDidMount() {
@@ -83,13 +128,15 @@ postMessage: this.state.postMessage,
         <Text>{this.state.username}</Text>
         {/* Input box for post message */}
         <TextInput
+        style={{marginTop: '10%',border: '3px solid black'}}
           placeholder="What's on your mind?"
           multiline={true}
           value={this.state.postMessage}
           onChangeText={(text) => this.setState({ postMessage: text })}
         />
+        <Image src={{ uri: this.state.postImage }} style={{width: '70%', height: '70%',marginTop:'20%'}}/>
         {/* Button to upload Image */}
-        <TouchableHighlight onPress={() => this.fetchImage()}>
+        <TouchableHighlight onPress={() => this.selectPicture()}>
           <Text>Upload Image</Text>
         </TouchableHighlight>
         {/* Button to create post */}
