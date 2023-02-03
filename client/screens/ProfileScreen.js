@@ -53,6 +53,7 @@ export default class ProfileScreen extends Component {
   };
 
   fetchImage = async (imageName) => {
+    
     var storageRef =  firebase
       .storage()
       .ref()
@@ -62,6 +63,7 @@ export default class ProfileScreen extends Component {
     await storageRef
       .getDownloadURL()
       .then((url) => {
+       
         this.setState({ profileImage: url });
       })
       .catch((error) => {
@@ -72,7 +74,7 @@ export default class ProfileScreen extends Component {
   // Function to fetch user information from database
   fetchUserData = () => {
     var email = firebase.auth().currentUser.email;
-    db.collection("users")
+  return  db.collection("users")
       .where("email", "==", email)
       .get()
       .then((snapshot) => {
@@ -81,7 +83,7 @@ export default class ProfileScreen extends Component {
           this.setState({
             email: data.email,
             username: data.username,
-            //profileImage: doc.data().profileImage,
+            profileImage: doc.data().profileImage,
             aboutMe: data.aboutMe,
             phone: data.phone,
             docId: doc.id,
@@ -89,15 +91,17 @@ export default class ProfileScreen extends Component {
         });
       });
   };
-  componentDidMount() {
-    this.fetchUserData();
+ async componentDidMount() {
+  //use try catch block
+   await this.fetchUserData();
+
     this.fetchImage(this.state.username);
   }
 
   // Function to change user information in database
   updateUserData = () => {
     db.collection("users").doc(this.state.docId).update({
-      username: this.state.username,
+      profileImage: this.state.profileImage,
       aboutMe: this.state.aboutMe,
       phone: this.state.phone,
     });
