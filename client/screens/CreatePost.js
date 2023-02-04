@@ -85,7 +85,7 @@ class CreatePost extends Component {
       .then((url) => {
         this.setState({ postImage: url });
         alert("Image selected successfully")
-        console.log(this.state.postImage);
+        
       })
       .catch((error) => {
         this.setState({ postImage: "#" });

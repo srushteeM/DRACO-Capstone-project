@@ -26,7 +26,7 @@ export default class StoriesScreen extends Component {
     await this.fetchStories();
     console.log(this.state.data)
   };
-
+ 
   fetchStories = async () => {
     var story;
     return db
