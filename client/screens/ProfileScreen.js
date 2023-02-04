@@ -12,7 +12,8 @@ import {
 import * as ImagePicker from "expo-image-picker";
 import * as Permissions from "expo-permissions";
 import firebase from "firebase";
-import db from "../config";
+//import db from "../config";
+import db from '../database/userProfile'
 export default class ProfileScreen extends Component {
   constructor(props) {
     super(props);
@@ -91,11 +92,23 @@ export default class ProfileScreen extends Component {
         });
       });
   };
+
+  fetchDataFromLocalDb=async()=>{
+    var data=db[0]
+    this.setState({
+       email: data.email,
+            username: data.username,
+            profileImage: data.profileImage,
+            aboutMe: data.aboutMe,
+            phone: data.phone,
+    })
+  }
  async componentDidMount() {
   //use try catch block
-   await this.fetchUserData();
+  //  await this.fetchUserData();
 
-    this.fetchImage(this.state.username);
+  //   this.fetchImage(this.state.username);
+  this.fetchDataFromLocalDb()
   }
 
   // Function to change user information in database

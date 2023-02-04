@@ -115,8 +115,7 @@ class CreatePost extends Component {
   render() {
     return (
       <View>
-        {/* Profile picture */}
-        <Image style={styles.avatar} src={{ uri: this.state.profileImage }} />
+       
         {/* Username */}
         <Text style={styles.userNameTxt}>{this.state.username}</Text>
         {/* Input box for post message */}

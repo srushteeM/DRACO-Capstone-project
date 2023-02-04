@@ -171,13 +171,14 @@ iconEmailEdit:{
 
 saveBtn:{
   width: '30%',
-  marginTop:'10px',
-  marginLeft:'10px',
+  marginTop:'45%',
+  marginLeft:'140px',
   textAlign: 'center',
   color:'#fff',
   height: '22px',
   borderRadius: '4px',
-  backgroundColor:'#8530d1'
+  backgroundColor:'#8530d1',
+  position:"absolute"
 },
 
 // Logout section
