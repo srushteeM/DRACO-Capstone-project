@@ -84,6 +84,7 @@ class CreatePost extends Component {
       .getDownloadURL()
       .then((url) => {
         this.setState({ postImage: url });
+        alert("Image selected successfully")
         console.log(this.state.postImage);
       })
       .catch((error) => {
@@ -110,6 +111,7 @@ class CreatePost extends Component {
 
   async componentDidMount() {
     await this.fetchUserData();
+    console.log(this.state.postImage)
     //this.fetchImage();
   }
   render() {
@@ -132,7 +134,7 @@ class CreatePost extends Component {
           <Text style={styles.uploadBtn}>Upload Image</Text>
         </TouchableHighlight>
         {/* Button to create post */}
-        <TouchableHighlight onPress={() => this.createPost()}>
+        <TouchableHighlight onPress={() => {this.createPost(); this.props.navigation.navigate("Home")}}>
           <Text style={styles.uploadBtn}>Post</Text>
         </TouchableHighlight>
       </View>

@@ -11,7 +11,7 @@ container:{
 header: {
   position:'relative',
   backgroundColor: "#8530d1",
-  minHeight:120,
+  minHeight:100,
   borderBottomLeftRadius:50,
   borderBottomRightRadius:50
 },
@@ -72,7 +72,7 @@ body: {
 userNameBox:{
   position:'relative',
   flexDirection:'row',
-  padding:'8%',
+  padding:'4%',
 },
 
 iconUser:{
@@ -94,7 +94,7 @@ info:{
 aboutBox:{
   position:'relative',
   flexDirection:'row',
-  padding:'8%',
+  padding:'4%',
 },
 
 
@@ -122,7 +122,7 @@ aboutIconBox:{
 PhoneBox:{
   position:'relative',
   flexDirection:'row',
-  padding:'8%',
+  padding:'4%',
 },
 
 iconPhone:{
@@ -150,7 +150,7 @@ iconPhoneBox:{
 emailBox:{
   position:'relative',
   flexDirection:'row',
-  padding:'8%',
+  padding:'4%',
 },
 
 iconEmail:{
@@ -168,10 +168,14 @@ iconEmailEdit:{
 },
 
 // Ssave Buttons
-
+saveBox:{
+  position:'relative',
+  flexDirection:'row',
+  padding:'4%',
+},
 saveBtn:{
   width: '30%',
-  marginTop:'45%',
+  marginTop:'10px',
   marginLeft:'140px',
   textAlign: 'center',
   color:'#fff',
@@ -192,7 +196,7 @@ logoutTxt:{
 LogoutBox:{
   position:'relative',
   flexDirection:'row',
-  padding:'8%',
+  padding:'4%',
 },
 
 iconLogout:{
@@ -211,7 +215,7 @@ iconEmailEdit:{
 
 
 bottomWave:{
-  height: '200px',
+  height: '150px',
   position: 'relative',
   width: '100vh',
   bottom: '0'
