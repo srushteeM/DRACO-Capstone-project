@@ -51,6 +51,7 @@ export default class CompanionScreen extends Component {
             style={styles.phoneIcon}
           />
         </TouchableHighlight>
+          <Image source={require("../assets/wave.png")} style={styles.bottomImg} />
       </View>
     );
   }   
@@ -99,6 +100,13 @@ const styles = StyleSheet.create({
     left:'50%',
     transform:'translate(-50%, 50%)'
   },
-
+  
+  bottomImg:{
+    position: "absolute",
+    width: "100%",
+    height: "200px",
+    bottom: '0',
+    zIndex: '999',
+  },
 
 });
