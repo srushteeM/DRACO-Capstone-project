@@ -183,7 +183,7 @@ export default class ProfileScreen extends Component {
                 value={this.state.aboutMe}
               />
             </View>
-            <TouchableHighlight
+            <TouchableHighlight 
               style={styles.aboutIconBox}
               onPress={() => this.setState({ aboutMeEditable: true })}
             >
@@ -262,7 +262,10 @@ export default class ProfileScreen extends Component {
             >
               <Text style={styles.logoutTxt}>Logout</Text>
             </TouchableHighlight>
-            <View style={styles.saveBox}>
+          </View>
+
+         {/* Save Button */}
+          <View style={styles.saveBox}>
               <TouchableHighlight
                 style={styles.saveBtn}
                 onPress={() => {
@@ -274,18 +277,14 @@ export default class ProfileScreen extends Component {
                   this.updateUserData();
                 }}
               >
-                <Text style={{ color: "white", fontWeight: "bold" }}>Save</Text>
+                <Text style={styles.saveBtn1}>Save</Text>
               </TouchableHighlight>
             </View>
-          </View>
-
-          <View>
-            {/* <Image
-              style={styles.bottomWave}
-              source={require("../assets/wave.png")}
-            /> */}
-          </View>
         </View>
+            <Image
+              source={require("../assets/wave.png")}
+              style={styles.bottomWave}
+            />
       </View>
     );
   }
