@@ -13,6 +13,7 @@ import * as ImagePicker from "expo-image-picker";
 import * as Permissions from "expo-permissions";
 import firebase from "firebase";
 import db from "../config";
+//import db from '../database/userProfile'
 export default class ProfileScreen extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +24,8 @@ export default class ProfileScreen extends Component {
       phone: " ",
       email: "",
       logout: "",
+      aboutMeEditable: false,
+      phoneEditable: false,
     };
   }
   selectPicture = async () => {
@@ -53,7 +56,7 @@ export default class ProfileScreen extends Component {
   };
 
   fetchImage = async (imageName) => {
-    var storageRef =  firebase
+    var storageRef = firebase
       .storage()
       .ref()
       .child("user_profiles/" + imageName);
@@ -72,7 +75,8 @@ export default class ProfileScreen extends Component {
   // Function to fetch user information from database
   fetchUserData = () => {
     var email = firebase.auth().currentUser.email;
-    db.collection("users")
+    return db
+      .collection("users")
       .where("email", "==", email)
       .get()
       .then((snapshot) => {
@@ -81,7 +85,7 @@ export default class ProfileScreen extends Component {
           this.setState({
             email: data.email,
             username: data.username,
-            //profileImage: doc.data().profileImage,
+            profileImage: doc.data().profileImage,
             aboutMe: data.aboutMe,
             phone: data.phone,
             docId: doc.id,
@@ -89,15 +93,29 @@ export default class ProfileScreen extends Component {
         });
       });
   };
-  componentDidMount() {
-    this.fetchUserData();
+
+  fetchDataFromLocalDb = async () => {
+    var data = db[0];
+    this.setState({
+      email: data.email,
+      username: data.username,
+      profileImage: data.profileImage,
+      aboutMe: data.aboutMe,
+      phone: data.phone,
+    });
+  };
+  async componentDidMount() {
+    //use try catch block
+    await this.fetchUserData();
+
     this.fetchImage(this.state.username);
+    //  this.fetchDataFromLocalDb()
   }
 
   // Function to change user information in database
   updateUserData = () => {
     db.collection("users").doc(this.state.docId).update({
-      username: this.state.username,
+      profileImage: this.state.profileImage,
       aboutMe: this.state.aboutMe,
       phone: this.state.phone,
     });
@@ -152,6 +170,11 @@ export default class ProfileScreen extends Component {
               <TextInput
                 multiline={true}
                 editable={this.state.aboutMeEditable}
+                style={
+                  this.state.aboutMeEditable
+                    ? { borderWidth: "2px", borderColor: "black" }
+                    : { borderWidth: "0px" }
+                }
                 onChangeText={(text) => {
                   this.setState({
                     aboutMe: text,
@@ -183,6 +206,11 @@ export default class ProfileScreen extends Component {
               <Text style={styles.info}>Phone:</Text>
               <TextInput
                 maxLength={10}
+                style={
+                  this.state.phoneEditable
+                    ? { borderWidth: "2px", borderColor: "black" }
+                    : { borderWidth: "0px" }
+                }
                 editable={this.state.phoneEditable}
                 keyboardType={"numeric"}
                 onChangeText={(text) => {
@@ -214,18 +242,6 @@ export default class ProfileScreen extends Component {
             </View>
             <View>
               <Text style={styles.info}>Email:{this.state.email}</Text>
-              <TouchableHighlight
-                // style={styles.button}
-                onPress={() => {
-                  this.setState({
-                    aboutMeEditable: false,
-                    phoneEditable: false,
-                  });
-                  this.updateUserData();
-                }}
-              >
-                <Text style={styles.saveBtn}>Save</Text>
-              </TouchableHighlight>
             </View>
           </View>
 
@@ -237,22 +253,37 @@ export default class ProfileScreen extends Component {
                 source={require("../assets/logout.png")}
               />
             </View>
-            <TouchableHighlight 
-                // style={styles.button}
+            <TouchableHighlight
+              // style={styles.button}
+              onPress={() => {
+                this.props.navigation.navigate("Login");
+                firebase.auth().signOut();
+              }}
+            >
+              <Text style={styles.logoutTxt}>Logout</Text>
+            </TouchableHighlight>
+            <View style={styles.saveBox}>
+              <TouchableHighlight
+                style={styles.saveBtn}
                 onPress={() => {
-                  this.props.navigation.navigate("Login");
-                  firebase.auth().signOut();
+                  this.setState({
+                    aboutMeEditable: false,
+                    phoneEditable: false,
+                  });
+
+                  this.updateUserData();
                 }}
               >
-                <Text style={styles.logoutTxt}>Logout</Text>
+                <Text style={{ color: "white", fontWeight: "bold" }}>Save</Text>
               </TouchableHighlight>
+            </View>
           </View>
 
           <View>
-            <Image
+            {/* <Image
               style={styles.bottomWave}
               source={require("../assets/wave.png")}
-            />
+            /> */}
           </View>
         </View>
       </View>

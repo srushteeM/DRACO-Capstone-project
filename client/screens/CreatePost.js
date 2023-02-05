@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { Text, View, Image, TouchableHighlight, TextInput, StyleSheet } from "react-native";
+import {
+  Text,
+  View,
+  Image,
+  TouchableHighlight,
+  TextInput,
+  StyleSheet,
+} from "react-native";
 import { v4 as uuid } from "uuid";
 import firebase from "firebase";
 import db from "../config";
@@ -21,35 +28,21 @@ class CreatePost extends Component {
   fetchUserData = async () => {
     var email = firebase.auth().currentUser.email;
 
-    db.collection("users")
+    return db
+      .collection("users")
       .where("email", "==", email)
       .get()
       .then((snapshot) => {
         snapshot.forEach((doc) => {
           var data = doc.data();
+          console.log(doc.data().profileImage);
           this.setState({
             email: data.email,
             username: data.username,
-            profileImage: doc.data().profileImage,
-
+            profileImage: data.profileImage,
             docId: doc.id,
           });
         });
-      });
-
-    var storageRef = firebase
-      .storage()
-      .ref()
-      .child("user_profiles/" + this.state.username);
-
-    // Get the download URL
-    await storageRef
-      .getDownloadURL()
-      .then((url) => {
-        this.setState({ profileImage: url });
-      })
-      .catch((error) => {
-        this.setState({ profileImage: "#" });
       });
   };
 
@@ -91,7 +84,8 @@ class CreatePost extends Component {
       .getDownloadURL()
       .then((url) => {
         this.setState({ postImage: url });
-        console.log(this.state.postImage);
+        alert("Image selected successfully")
+        
       })
       .catch((error) => {
         this.setState({ postImage: "#" });
@@ -111,24 +105,24 @@ class CreatePost extends Component {
     this.setState({
       postMessage: "",
       postImage: "",
-      img_id:""
+      img_id: "",
     });
   };
 
-  componentDidMount() {
-    this.fetchUserData();
+  async componentDidMount() {
+    await this.fetchUserData();
+    console.log(this.state.postImage)
     //this.fetchImage();
   }
   render() {
     return (
       <View>
-        {/* Profile picture */}
-        <Image src={{ uri: this.state.profileImage }} />
+       
         {/* Username */}
         <Text style={styles.userNameTxt}>{this.state.username}</Text>
         {/* Input box for post message */}
         <TextInput
-        style={styles.textBox}
+          style={styles.textBox}
           placeholder="What's on your mind?"
           multiline={true}
           value={this.state.postMessage}
@@ -140,10 +134,10 @@ class CreatePost extends Component {
           <Text style={styles.uploadBtn}>Upload Image</Text>
         </TouchableHighlight>
         {/* Button to create post */}
-        <TouchableHighlight onPress={() => this.createPost()}>
+        <TouchableHighlight onPress={() => {this.createPost(); this.props.navigation.navigate("Home")}}>
           <Text style={styles.uploadBtn}>Post</Text>
         </TouchableHighlight>
-      </View>   
+      </View>
     );
   }
 }
@@ -162,42 +156,53 @@ format of data to be saved in database.
 */
 
 const styles = StyleSheet.create({
-  uploadBtn:{
-    backgroundColor:'#8530d1',
-    color:'#fff',
-    textAlign:'center',
-    lineHeight:'20px',
-    marginTop:'5px',
-    marginLeft:'10px',
-    marginRight:'10px',
-    borderTopRightRadius:'4px',
-    borderTopLeftRadius:'4px',
-    borderBottomRightRadius:'4px',
-    borderBottomLeftRadius:'4px',
-    padding:'5px'
+  uploadBtn: {
+    backgroundColor: "#8530d1",
+    color: "#fff",
+    textAlign: "center",
+    lineHeight: "20px",
+    marginTop: "5px",
+    marginLeft: "10px",
+    marginRight: "10px",
+    borderTopRightRadius: "4px",
+    borderTopLeftRadius: "4px",
+    borderBottomRightRadius: "4px",
+    borderBottomLeftRadius: "4px",
+    padding: "5px",
   },
 
-  textBox:{
-    marginTop: '2%',border: '1px solid grey',
-    backgroundColor: 'white',
-    height: '150px',
-    border: '1px solid grey',
-    margin: '12px',
-    padding: '10px'
+  textBox: {
+    marginTop: "2%",
+    border: "1px solid grey",
+    backgroundColor: "white",
+    height: "150px",
+    border: "1px solid grey",
+    margin: "12px",
+    padding: "10px",
   },
 
-  userNameTxt:{
-  textAlign: 'left',
-  marginTop: '15px',
-  marginLeft:'15px',
-  textTransform:'capitalize',
-  fontWeight: 600,
-  fontSize: '1.5rem'
+  userNameTxt: {
+    textAlign: "left",
+    marginTop: "15px",
+    marginLeft: "15px",
+    textTransform: "capitalize",
+    fontWeight: 600,
+    fontSize: "1.5rem",
   },
-  
-  iconUpload:{
-    height:'15px',
-    width:'15px'
-  }
 
+  iconUpload: {
+    height: "15px",
+    width: "15px",
+  },
+  avatar: {
+    width: 80,
+    height: 80,
+    borderRadius: 63,
+    borderWidth: 4,
+    borderColor: "lavender",
+    backgroundColor: "#fff",
+    position: "absolute",
+    marginTop: "20%",
+    left: "10%",
+  },
 });
